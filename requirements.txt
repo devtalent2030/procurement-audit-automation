@@ -1,0 +1,7 @@
+pandas
+openpyxl
+faker
+streamlit
+torch
+transformers
+pytest

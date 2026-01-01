@@ -1,0 +1,6 @@
+financial_thresholds:
+  max_variance_percent: 10
+  require_po_approval: true
+foip_keywords:
+  - 'confidential'
+  - 'do not disclose'
