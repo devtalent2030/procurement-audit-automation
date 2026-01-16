@@ -1,6 +1,9 @@
-financial_thresholds:
-  max_variance_percent: 10
-  require_po_approval: true
-foip_keywords:
-  - 'confidential'
-  - 'do not disclose'
+# This file controls the behavior of the Audit Engine.
+# Edit this file to change thresholds without touching code.
+
+financial_limits:
+  max_po_variance: 0.10       # Allow 10% discrepancy between PO and Invoice
+  high_value_threshold: 15000 # Flag any invoice above this amount for review
+
+risk_settings:
+  detect_ghost_vendors: true
