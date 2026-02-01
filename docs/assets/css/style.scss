@@ -2,34 +2,39 @@
 ---
 
 /*
-  GitHub Pages (Jekyll Cayman) – Premium polish layer
+  GitHub Pages (Jekyll Cayman) – Premium polish layer (LIGHT MODE SAFE)
   Place this file at: docs/assets/css/style.scss
 
-  Notes:
-  - The front matter above is REQUIRED so Jekyll compiles SCSS.
-  - This file overrides Cayman defaults gently (no theme breakage).
+  Why this version:
+  - Cayman pages are white in the main content area.
+  - Your old CSS forced white text (invisible on white).
+  - This version keeps the “premium cards” look but uses dark text.
 */
 
 /* -----------------------------------------
    Theme tokens (easy to tweak)
 ------------------------------------------ */
 :root {
-  --card-bg: rgba(255, 255, 255, 0.04);
-  --card-bg-2: rgba(255, 255, 255, 0.06);
-  --card-border: rgba(255, 255, 255, 0.10);
-  --card-border-2: rgba(255, 255, 255, 0.14);
+  /* Cards */
+  --card-bg: #ffffff;
+  --card-bg-2: #fbfcfe;
+  --card-border: rgba(15, 23, 42, 0.10);
+  --card-border-2: rgba(15, 23, 42, 0.16);
 
-  --text-muted: rgba(255, 255, 255, 0.72);
-  --text-faint: rgba(255, 255, 255, 0.60);
+  /* Text */
+  --text: rgba(15, 23, 42, 0.92);        /* slate-900-ish */
+  --text-muted: rgba(15, 23, 42, 0.72);
+  --text-faint: rgba(15, 23, 42, 0.56);
 
-  --shadow: 0 12px 32px rgba(0,0,0,0.28);
-  --shadow-soft: 0 10px 24px rgba(0,0,0,0.20);
+  /* Shadows */
+  --shadow: 0 14px 40px rgba(2, 6, 23, 0.10);
+  --shadow-soft: 0 10px 26px rgba(2, 6, 23, 0.08);
 
   --radius: 14px;
   --radius-lg: 18px;
   --gap: 14px;
 
-  /* Cayman-ish accent (matches the theme buttons) */
+  /* Cayman-ish accent */
   --accent: #159957;
   --accent-2: #155799;
 }
@@ -38,40 +43,61 @@
    Global typography + spacing tweaks
 ------------------------------------------ */
 .main-content {
-  line-height: 1.7;
+  line-height: 1.75;
+  color: var(--text);
 }
 
-.main-content h1, .main-content h2, .main-content h3 {
+.main-content h1,
+.main-content h2,
+.main-content h3 {
   letter-spacing: -0.01em;
+  color: rgba(15, 23, 42, 0.96);
 }
 
-.main-content p {
-  color: rgba(255, 255, 255, 0.90);
+.main-content p,
+.main-content li,
+.main-content blockquote,
+.main-content table,
+.main-content td,
+.main-content th {
+  color: var(--text);
 }
 
 .main-content a {
+  color: var(--accent-2);
   text-decoration: none;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.30);
+  border-bottom: 1px dotted rgba(21, 87, 153, 0.35);
 }
 .main-content a:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.70);
+  border-bottom-color: rgba(21, 87, 153, 0.75);
 }
 
-/* Make code blocks look cleaner */
+/* Code blocks: cleaner */
 .main-content pre {
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: #0b1020; /* dark code background looks premium */
+  color: rgba(255,255,255,0.92);
 }
+.main-content pre code { color: rgba(255,255,255,0.92); }
 .main-content code {
   border-radius: 8px;
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  padding: 0.12em 0.35em;
 }
 
 /* Horizontal rule: subtle */
 .main-content hr {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.18), rgba(255,255,255,0.0));
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.0),
+    rgba(15, 23, 42, 0.14),
+    rgba(15, 23, 42, 0.0)
+  );
   margin: 2rem 0;
 }
 
@@ -79,20 +105,11 @@
 .main-content img {
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(15, 23, 42, 0.10);
 }
 
 /* -----------------------------------------
-   Card system (use with HTML blocks in markdown)
-
-   Example:
-   <div class="cards">
-     <div class="card">
-       <div class="card__kicker">Day 1</div>
-       <div class="card__title">Generate Dirty Data</div>
-       <div class="card__desc">Creates invoices.xlsx + vendor_master.csv</div>
-     </div>
-   </div>
+   Card system (HTML blocks in markdown)
 ------------------------------------------ */
 .cards {
   display: grid;
@@ -103,12 +120,11 @@
 
 .card {
   grid-column: span 12;
-  background: var(--card-bg);
+  background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
   padding: 16px 16px 14px;
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(8px);
 }
 
 @media (min-width: 740px) {
@@ -121,7 +137,8 @@
 .card:hover {
   border-color: var(--card-border-2);
   transform: translateY(-1px);
-  transition: transform 140ms ease, border-color 140ms ease;
+  transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  box-shadow: var(--shadow);
 }
 
 .card__kicker {
@@ -134,8 +151,9 @@
 
 .card__title {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 750;
   margin: 0 0 6px;
+  color: rgba(15, 23, 42, 0.96);
 }
 
 .card__desc {
@@ -157,42 +175,46 @@
   gap: 6px;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.86);
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: rgba(15, 23, 42, 0.04);
+  color: rgba(15, 23, 42, 0.86);
   font-size: 12px;
   line-height: 1;
 }
 
 .chip--ok {
-  border-color: rgba(21, 153, 87, 0.45);
-  background: rgba(21, 153, 87, 0.12);
+  border-color: rgba(21, 153, 87, 0.35);
+  background: rgba(21, 153, 87, 0.10);
+  color: rgba(10, 90, 50, 0.98);
 }
 
 .chip--warn {
-  border-color: rgba(255, 193, 7, 0.45);
-  background: rgba(255, 193, 7, 0.12);
+  border-color: rgba(245, 158, 11, 0.40);
+  background: rgba(245, 158, 11, 0.12);
+  color: rgba(120, 70, 0, 0.98);
 }
 
 .chip--fail {
-  border-color: rgba(220, 53, 69, 0.45);
-  background: rgba(220, 53, 69, 0.12);
+  border-color: rgba(220, 53, 69, 0.35);
+  background: rgba(220, 53, 69, 0.10);
+  color: rgba(130, 20, 30, 0.98);
 }
 
 /* -----------------------------------------
-   Callouts (simple, clean)
+   Callouts
 ------------------------------------------ */
 .callout {
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(15, 23, 42, 0.03);
   padding: 14px 14px 12px;
   margin: 1.2rem 0;
 }
 
 .callout__title {
-  font-weight: 700;
+  font-weight: 750;
   margin: 0 0 6px;
+  color: rgba(15, 23, 42, 0.96);
 }
 
 .callout__body {
@@ -201,22 +223,22 @@
 }
 
 .callout--accent {
-  border-color: rgba(21, 153, 87, 0.35);
-  background: rgba(21, 153, 87, 0.10);
+  border-color: rgba(21, 153, 87, 0.28);
+  background: rgba(21, 153, 87, 0.08);
 }
 
 .callout--note {
-  border-color: rgba(21, 87, 153, 0.35);
-  background: rgba(21, 87, 153, 0.10);
+  border-color: rgba(21, 87, 153, 0.25);
+  background: rgba(21, 87, 153, 0.06);
 }
 
 /* -----------------------------------------
-   “Evidence placeholders” (for screenshots/videos)
+   Evidence placeholders
 ------------------------------------------ */
 .evidence {
   border-radius: var(--radius-lg);
-  border: 1px dashed rgba(255,255,255,0.22);
-  background: rgba(255,255,255,0.03);
+  border: 1px dashed rgba(15, 23, 42, 0.22);
+  background: rgba(15, 23, 42, 0.02);
   padding: 14px;
   margin: 1rem 0;
 }
@@ -236,7 +258,7 @@
 }
 
 /* -----------------------------------------
-   Buttons (links styled as buttons)
+   Buttons
 ------------------------------------------ */
 .btn {
   display: inline-flex;
@@ -245,48 +267,53 @@
   gap: 8px;
   padding: 10px 14px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.92) !important;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: rgba(15, 23, 42, 0.04);
+  color: rgba(15, 23, 42, 0.92) !important;
   box-shadow: var(--shadow-soft);
 }
 
 .btn:hover {
-  border-color: rgba(255,255,255,0.26);
+  border-color: rgba(15, 23, 42, 0.22);
   transform: translateY(-1px);
   transition: transform 140ms ease, border-color 140ms ease;
 }
 
 .btn--accent {
-  border-color: rgba(21, 153, 87, 0.55);
-  background: linear-gradient(135deg, rgba(21,153,87,0.22), rgba(21,87,153,0.18));
+  border-color: rgba(21, 153, 87, 0.40);
+  background: linear-gradient(
+    135deg,
+    rgba(21, 153, 87, 0.12),
+    rgba(21, 87, 153, 0.08)
+  );
 }
 
 /* -----------------------------------------
-   Small layout helpers
+   Helpers
 ------------------------------------------ */
 .muted { color: var(--text-muted); }
 .faint { color: var(--text-faint); }
 
-/* Make tables less ugly */
+/* Tables: cleaner on white */
 table {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
   overflow: hidden;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(15, 23, 42, 0.10);
 }
 
 th, td {
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 thead th {
-  background: rgba(255,255,255,0.05);
+  background: rgba(15, 23, 42, 0.04);
+  color: rgba(15, 23, 42, 0.92);
 }
 
 tbody tr:hover td {
-  background: rgba(255,255,255,0.03);
+  background: rgba(15, 23, 42, 0.02);
 }
