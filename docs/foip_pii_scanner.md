@@ -4,6 +4,7 @@ title: FOIP / PII Scanner
 permalink: /foip_pii_scanner/
 ---
 
+````md
 # 🔒 FOIP / PII Scanner (AI Auditor)
 
 > **Goal:** Catch privacy-risk text inside **Notes / Comments / Description** fields **before** exports get shared, emailed, archived, or turned into reports.
@@ -76,7 +77,7 @@ flowchart LR
   F --> G
   G --> H[foip_ai_findings_<timestamp>.csv]
   H --> I[Dashboard + Downloads]
-```
+````
 
 <div class="cards">
   <div class="card card--half">
@@ -185,33 +186,6 @@ flowchart LR
 
 ---
 
-## 🧪 Public safety (why this is suitable for a public repo)
-
-<div class="cards">
-  <div class="card card--half">
-    <div class="card__kicker">Data hygiene</div>
-    <div class="card__title">Synthetic inputs, intentional test cases</div>
-    <p class="card__desc">The dataset is generated for demo/testing. PII-like strings are injected as controlled examples to validate detection and evidence outputs.</p>
-    <div class="card__meta">
-      <span class="chip">Synthetic data</span>
-      <span class="chip">Safe demos</span>
-      <span class="chip">Repeatable tests</span>
-    </div>
-  </div>
-
-  <div class="card card--half">
-    <div class="card__kicker">Operational mirror</div>
-    <div class="card__title">Matches real governance patterns</div>
-    <p class="card__desc">Production workflows require strict data handling; development workflows require safe test data. This project models that separation.</p>
-    <div class="card__meta">
-      <span class="chip">Prod vs Dev separation</span>
-      <span class="chip">No real PII</span>
-    </div>
-  </div>
-</div>
-
----
-
 ## ✅ What “good” looks like (expected outputs)
 
 <div class="cards">
@@ -239,7 +213,7 @@ flowchart LR
 
 ---
 
-## 📌 Evidence placeholders (add screenshots / video)
+## 📌 Evidence (media)
 
 <div class="cards">
   <div class="card card--half">
@@ -265,22 +239,49 @@ flowchart LR
   </div>
 </div>
 
-<div class="evidence">
-  <div class="evidence__label">ADD VIDEO</div>
-  <p class="evidence__hint">assets/demo/clip-c-ai-scan.png</p>
-</div>
+<!-- 1) ADD VIDEO (your path is a PNG; rendering as responsive clickable media) -->
 
 <div class="evidence">
-  <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">assets/demo/clip-c-ai-scan.png</p>
+  <div class="evidence__label">Clip C — AI scan (media)</div>
+  <div class="img-container">
+    <a href="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" alt="Clip C - AI scan media">
+    </a>
+  </div>
 </div>
 
-<div class="evidence">
-  <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">data/audit_reports/foip_ai_findings_20260131_224156.csv</p>
-</div>
+<!-- 2) ADD SCREENSHOT -->
 
 <div class="evidence">
-  <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">assets/screenshots/d1-dashboard-home.mp4</p>
+  <div class="evidence__label">Clip C — Screenshot</div>
+  <div class="img-container">
+    <a href="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" alt="Clip C - AI scan screenshot">
+    </a>
+  </div>
 </div>
+
+<!-- 3) ADD SCREENSHOT (CSV cannot display as image; link it as evidence artifact) -->
+
+<div class="evidence">
+  <div class="evidence__label">FOIP/PII findings evidence (CSV)</div>
+  <p class="evidence__hint">Original path: <code>data/audit_reports/foip_ai_findings_20260131_224156.csv</code></p>
+  <p class="card__desc">
+    <a class="btn btn--accent" href="{{ '/assets/evidence/foip_ai_findings_20260131_224156.csv' | relative_url }}" target="_blank" rel="noopener">
+      Open findings CSV
+    </a>
+  </p>
+</div>
+
+<!-- 4) ADD SCREENSHOT (you provided an MP4; embed as responsive video) -->
+
+<div class="evidence">
+  <div class="evidence__label">Dashboard home (video)</div>
+  <div class="video-container">
+    <video controls loop muted playsinline>
+      <source src="{{ '/assets/screenshots/d1-dashboard-home.mp4' | relative_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+```

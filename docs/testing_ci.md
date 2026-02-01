@@ -4,6 +4,8 @@ title: Testing & CI
 permalink: /testing_ci/
 ---
 
+````md
+
 # Testing & CI Credibility (Reliability Story)
 
 This project is intentionally built so the **audit results are reproducible**, and the **core logic is testable without network access**.
@@ -16,10 +18,46 @@ This project is intentionally built so the **audit results are reproducible**, a
 * **Evidence tables are materialized** (CSV outputs become audit artifacts).
 * **AI scan is optional in CI** (keeps CI fast + offline-safe), but fully available locally.
 
-> **Placeholders (add evidence):**
->
-> * **[Screenshot]** GitHub Actions run: passing pipeline — [`assets/screenshots/e2-github-actions-success.png`](assets/screenshots/e2-github-actions-success.png)
-> * **[Video]** Local run: `./run_audit.sh` end-to-end — [`assets/demo/clip-d-dashboard.mp4`](assets/demo/clip-d-dashboard.mp4)
+<div class="cards">
+  <div class="card card--half">
+    <div class="card__kicker">Evidence</div>
+    <div class="card__title">GitHub Actions run (passing)</div>
+    <p class="card__desc">Screenshot proof of a green pipeline run.</p>
+    <div class="card__meta">
+      <span class="chip">Actions</span>
+      <span class="chip chip--ok">Passed</span>
+    </div>
+  </div>
+
+  <div class="card card--half">
+    <div class="card__kicker">Evidence</div>
+    <div class="card__title">Local run (end-to-end)</div>
+    <p class="card__desc">Short clip showing <code>./run_audit.sh</code> and the dashboard in action.</p>
+    <div class="card__meta">
+      <span class="chip">Local demo</span>
+      <span class="chip chip--info">Video</span>
+    </div>
+  </div>
+</div>
+
+<div class="evidence">
+  <div class="evidence__label">GitHub Actions — passing pipeline</div>
+  <div class="img-container">
+    <a href="{{ '/assets/screenshots/e2-github-actions-success.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/screenshots/e2-github-actions-success.png' | relative_url }}" alt="GitHub Actions successful run">
+    </a>
+  </div>
+</div>
+
+<div class="evidence">
+  <div class="evidence__label">Local run — end-to-end demo (dashboard clip)</div>
+  <div class="video-container">
+    <video controls loop muted playsinline>
+      <source src="{{ '/assets/demo/clip-d-dashboard.mp4' | relative_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
 
 ---
 
@@ -44,7 +82,14 @@ Meaning:
 | FOIP/PII scan behavior  | Name/email detection triggers as expected          | Prevents privacy leaks in notes/comments     |
 | AI confidence threshold | Low-confidence entities don’t trigger false alerts | Reduces “privacy alert noise”                |
 
-> **[Screenshot]** `pytest -q` showing 4/4 passing locally — [`assets/demo/clip-e-tests-ci.png`](assets/demo/clip-e-tests-ci.png)
+<div class="evidence">
+  <div class="evidence__label">pytest — local passing run</div>
+  <div class="img-container">
+    <a href="{{ '/assets/demo/clip-e-tests-ci.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/demo/clip-e-tests-ci.png' | relative_url }}" alt="pytest output showing passing tests">
+    </a>
+  </div>
+</div>
 
 ---
 
@@ -70,7 +115,14 @@ This ensures:
 * email heuristic behavior
 * output schema (`InvoiceID`, `RiskContent`, `DetectedFlags`)
 
-> **[Screenshot]** Test file showing monkeypatch / fake pipeline — [`assets/demo/clip-e-tests-ci.png`](assets/demo/clip-e-tests-ci.png)
+<div class="evidence">
+  <div class="evidence__label">Unit tests — mocked brain (monkeypatch)</div>
+  <div class="img-container">
+    <a href="{{ '/assets/demo/clip-e-tests-ci.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/demo/clip-e-tests-ci.png' | relative_url }}" alt="Test file showing monkeypatch / fake pipeline">
+    </a>
+  </div>
+</div>
 
 ---
 
@@ -92,7 +144,14 @@ This mirrors real enterprise practice:
 * **Production/analyst run:** full scan with AI
 * **CI run:** verify rule engine + scanner logic with deterministic stubs
 
-> **[Screenshot]** GitHub Actions logs showing “Skipping AI auditor (SKIP_AI=1)” — [`assets/screenshots/e2-github-actions-success.png`](assets/screenshots/e2-github-actions-success.png)
+<div class="evidence">
+  <div class="evidence__label">CI evidence — SKIP_AI behavior (Actions screenshot)</div>
+  <div class="img-container">
+    <a href="{{ '/assets/screenshots/e2-github-actions-success.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/screenshots/e2-github-actions-success.png' | relative_url }}" alt="GitHub Actions logs showing SKIP_AI=1 behavior">
+    </a>
+  </div>
+</div>
 
 ---
 
@@ -112,7 +171,14 @@ The pipeline outputs **evidence CSVs** (for screenshots / demo assets) and **run
 * `data/audit_reports/*.csv`
 * `data/audit_reports/run_logs/*.log`
 
-> **[Screenshot]** GitHub Actions log showing evidence exports — [`assets/screenshots/b2-evidence-folder.png`](assets/screenshots/b2-evidence-folder.png)
+<div class="evidence">
+  <div class="evidence__label">Evidence exports (folder view)</div>
+  <div class="img-container">
+    <a href="{{ '/assets/screenshots/b2-evidence-folder.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/screenshots/b2-evidence-folder.png' | relative_url }}" alt="Evidence folder structure screenshot">
+    </a>
+  </div>
+</div>
 
 ---
 
@@ -122,7 +188,7 @@ The pipeline outputs **evidence CSVs** (for screenshots / demo assets) and **run
 
 ```bash
 pytest -q
-```
+````
 
 ### Run the full demo pipeline (includes AI unless you set SKIP_AI)
 
@@ -158,4 +224,12 @@ A green CI run means:
 * AI scanner decision logic behaves correctly (mocked brain)
 * Evidence tables are generated consistently
 
-> **[Screenshot]** Actions tab showing ✅ succeeded — [`assets/screenshots/e2-github-actions-success.png`](assets/screenshots/e2-github-actions-success.png)
+<div class="evidence">
+  <div class="evidence__label">Actions tab — succeeded</div>
+  <div class="img-container">
+    <a href="{{ '/assets/screenshots/e2-github-actions-success.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/screenshots/e2-github-actions-success.png' | relative_url }}" alt="Actions tab showing succeeded">
+    </a>
+  </div>
+</div>
+```
