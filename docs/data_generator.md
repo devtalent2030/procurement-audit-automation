@@ -1,9 +1,8 @@
 ---
-
 layout: default
 title: Data Generator
 permalink: /data_generator/
----------------------------
+---
 
 # Data Generator — Synthetic ERP Exports (Dirty-by-Design)
 

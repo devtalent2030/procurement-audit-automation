@@ -1,9 +1,8 @@
 ---
-
 layout: default
 title: FOIP / PII Scanner
 permalink: /foip_pii_scanner/
------------------------------
+---
 
 # 🔒 FOIP / PII Scanner (AI Auditor)
 

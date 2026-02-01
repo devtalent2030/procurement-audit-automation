@@ -1,9 +1,8 @@
 ---
-
 layout: default
 title: Testing & CI
 permalink: /testing_ci/
------------------------
+---
 
 # Testing & CI Credibility (Reliability Story)
 

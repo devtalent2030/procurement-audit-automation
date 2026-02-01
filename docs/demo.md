@@ -1,9 +1,8 @@
 ---
-
 layout: default
 title: Demo & Evidence Artifacts
 permalink: /demo/
------------------
+---
 
 # Demo & Evidence
 

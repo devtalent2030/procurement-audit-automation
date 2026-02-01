@@ -1,9 +1,8 @@
 ---
-
 layout: default
 title: Audit Rule Engine Concepts
 permalink: /logic_engine_concepts/
-----------------------------------
+---
 
 > **Goal:** Turn messy ERP exports (Excel/CSV) into **audit-grade evidence** using **config-driven rules**.
 > The engine is designed to be readable by non-technical reviewers and defensible to technical auditors.
