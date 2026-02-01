@@ -4,7 +4,7 @@ title: Testing & CI
 permalink: /testing_ci/
 ---
 
-````md
+
 
 # Testing & CI Credibility (Reliability Story)
 
@@ -232,4 +232,4 @@ A green CI run means:
     </a>
   </div>
 </div>
-```
+
