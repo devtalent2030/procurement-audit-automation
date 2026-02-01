@@ -28,8 +28,10 @@ The generator is intentionally **dirty-by-design** so the audit engine has somet
 
 ### Open the generated files (your published docs copies)
 
-* Vendor Master: [data/raw_erp_dump/vendor_master.csv](data/raw_erp_dump/vendor_master.csv)
-* Invoices Export: [data/raw_erp_dump/invoices.xlsx](data/raw_erp_dump/invoices.xlsx)
+> These links assume the files are available under your published docs (recommended).
+
+* Vendor Master: [vendor_master.csv]({{ '/assets/sample_data/vendor_master.csv' | relative_url }})
+* Invoices Export: [invoices.xlsx]({{ '/assets/sample_data/invoices.xlsx' | relative_url }})
 
 ---
 
@@ -37,7 +39,7 @@ The generator is intentionally **dirty-by-design** so the audit engine has somet
 
 ```bash
 python src/data_generator.py
-```
+````
 
 Expected terminal output:
 
@@ -76,11 +78,18 @@ Invoices include vendor IDs that do **not** exist in the Vendor Master.
 **Evidence output produced later:**
 
 * `data/audit_reports/ghost_vendors_20260201_124647.csv`
-* Evidence file: [ghost_vendors_20260201_124647.csv](data/audit_reports/ghost_vendors_20260201_124647.csv)
+
+**Published evidence copy (recommended):**
+
+* [ghost_vendors_20260201_124647.csv]({{ '/assets/evidence/ghost_vendors_20260201_124647.csv' | relative_url }})
 
 **Screenshot proof:**
 
-![Generated files created (vendor master + invoices export)](assets/screenshots/a1-generated-files.png)
+<div class="img-container">
+  <a href="{{ '/assets/screenshots/a1-generated-files.png' | relative_url }}" target="_blank" rel="noopener">
+    <img src="{{ '/assets/screenshots/a1-generated-files.png' | relative_url }}" alt="Generated files created (vendor master + invoices export)">
+  </a>
+</div>
 
 ---
 
@@ -102,11 +111,18 @@ variance = abs(invoice_amount - po_amount) / po_amount
 **Evidence output produced later:**
 
 * `data/audit_reports/po_variance_20260201_124647.csv`
-* Evidence file: [po_variance_20260201_124647.csv](data/audit_reports/po_variance_20260201_124647.csv)
+
+**Published evidence copy (recommended):**
+
+* [po_variance_20260201_124647.csv]({{ '/assets/evidence/po_variance_20260201_124647.csv' | relative_url }})
 
 **Screenshot proof:**
 
-![Excel anomalies: ghost vendor + invoice/PO mismatch](assets/screenshots/a2-excel-anomalies.png)
+<div class="img-container">
+  <a href="{{ '/assets/screenshots/a2-excel-anomalies.png' | relative_url }}" target="_blank" rel="noopener">
+    <img src="{{ '/assets/screenshots/a2-excel-anomalies.png' | relative_url }}" alt="Excel anomalies: ghost vendor + invoice/PO mismatch">
+  </a>
+</div>
 
 ---
 
@@ -122,11 +138,18 @@ A portion of invoices are generated above a configurable high-value threshold.
 **Evidence output produced later:**
 
 * `data/audit_reports/high_value_20260201_125633.csv` (from dashboard export)
-* Evidence file: [high_value_20260201_125633.csv](data/audit_reports/high_value_20260201_125633.csv)
+
+**Published evidence copy (recommended):**
+
+* [high_value_20260201_125633.csv]({{ '/assets/evidence/high_value_20260201_125633.csv' | relative_url }})
 
 **Screenshot proof:**
 
-![Evidence folder showing timestamped CSV outputs](assets/screenshots/b2-evidence-folder.png)
+<div class="img-container">
+  <a href="{{ '/assets/screenshots/b2-evidence-folder.png' | relative_url }}" target="_blank" rel="noopener">
+    <img src="{{ '/assets/screenshots/b2-evidence-folder.png' | relative_url }}" alt="Evidence folder showing timestamped CSV outputs">
+  </a>
+</div>
 
 ---
 
@@ -144,29 +167,22 @@ The `Notes` field is where “human messiness” lives:
 * free-text fields are the #1 place privacy risks leak into reporting exports
 * this is exactly what FOIP-style reviews care about: accidental disclosure through operational text
 
-**Expected findings later:**
-
-* `POSSIBLE_EMAIL`
-* `NAME_DETECTED: <person>` (NER)
-
 **Evidence output produced later:**
 
 * `data/audit_reports/foip_ai_findings_20260131_224156.csv`
-* Evidence file: [foip_ai_findings_20260131_224156.csv](data/audit_reports/foip_ai_findings_20260131_224156.csv)
+
+**Published evidence copy (recommended):**
+
+* [foip_ai_findings_20260131_224156.csv]({{ '/assets/evidence/foip_ai_findings_20260131_224156.csv' | relative_url }})
 
 **FOIP evidence capture (video):**
 
-<video controls width="900">
-  <source src="assets/screenshots/c2-foip-evidence-csv.mp4" type="video/mp4">
-</video>
-
----
-
-## Design choices that keep this safe to publish
-
-* **No real procurement records** are used.
-* Data is generated as **synthetic demo data**, so it can be safely stored in GitHub.
-* The generator creates repeatable inputs so the demo is stable across runs.
+<div class="video-container">
+  <video controls loop muted playsinline>
+    <source src="{{ '/assets/screenshots/c2-foip-evidence-csv.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 ---
 
@@ -177,10 +193,12 @@ The `Notes` field is where “human messiness” lives:
    ```bash
    python src/data_generator.py
    ```
+
 2. Open:
 
    * `data/raw_erp_dump/vendor_master.csv`
    * `data/raw_erp_dump/invoices.xlsx`
+
 3. Briefly scroll to show:
 
    * Vendor IDs in master
@@ -192,4 +210,8 @@ The `Notes` field is where “human messiness” lives:
 
 **Clip A (your capture):**
 
-![Clip A — Data generator run](assets/demo/clip-a-generate.png)
+<div class="img-container">
+  <a href="{{ '/assets/demo/clip-a-generate.png' | relative_url }}" target="_blank" rel="noopener">
+    <img src="{{ '/assets/demo/clip-a-generate.png' | relative_url }}" alt="Clip A — Data generator run">
+  </a>
+</div>
