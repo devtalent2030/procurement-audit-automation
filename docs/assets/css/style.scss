@@ -2,19 +2,19 @@
 ---
 
 /*
-  GitHub Pages (Jekyll Cayman) – Premium polish layer (LIGHT MODE SAFE)
+  GitHub Pages (Jekyll Cayman) – Premium polish layer (GREY BACKGROUND + LIFTED CARDS)
   Place this file at: docs/assets/css/style.scss
-
-  Why this version:
-  - Cayman pages are white in the main content area.
-  - Your old CSS forced white text (invisible on white).
-  - This version keeps the “premium cards” look but uses dark text.
 */
 
 /* -----------------------------------------
-   Theme tokens (easy to tweak)
+   Theme tokens
 ------------------------------------------ */
 :root {
+  /* Page */
+  --page-bg: #f3f5f8;          /* soft grey */
+  --page-bg-2: #eef2f6;        /* subtle variation */
+  --content-bg: rgba(255,255,255,0.85);
+
   /* Cards */
   --card-bg: #ffffff;
   --card-bg-2: #fbfcfe;
@@ -22,31 +22,53 @@
   --card-border-2: rgba(15, 23, 42, 0.16);
 
   /* Text */
-  --text: rgba(15, 23, 42, 0.92);        /* slate-900-ish */
+  --text: rgba(15, 23, 42, 0.92);
   --text-muted: rgba(15, 23, 42, 0.72);
   --text-faint: rgba(15, 23, 42, 0.56);
 
   /* Shadows */
-  --shadow: 0 14px 40px rgba(2, 6, 23, 0.10);
-  --shadow-soft: 0 10px 26px rgba(2, 6, 23, 0.08);
+  --shadow: 0 18px 50px rgba(2, 6, 23, 0.14);
+  --shadow-soft: 0 12px 28px rgba(2, 6, 23, 0.10);
 
   --radius: 14px;
   --radius-lg: 18px;
   --gap: 14px;
 
-  /* Cayman-ish accent */
+  /* Cayman-ish accents */
   --accent: #159957;
   --accent-2: #155799;
 }
 
 /* -----------------------------------------
-   Global typography + spacing tweaks
+   Page background + content container
 ------------------------------------------ */
-.main-content {
-  line-height: 1.75;
-  color: var(--text);
+html, body {
+  background: radial-gradient(1200px 600px at 20% 0%, #ffffff 0%, var(--page-bg) 55%, var(--page-bg-2) 100%) !important;
 }
 
+/* Cayman wraps content in .main-content; give it a subtle “panel” */
+.main-content {
+  color: var(--text);
+  line-height: 1.75;
+
+  /* Premium feel: panel on top of grey */
+  background: var(--content-bg);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 20px 55px rgba(2, 6, 23, 0.10);
+
+  /* Cayman already has padding; we gently add */
+  padding: 2rem 2.2rem;
+}
+
+/* Keep header clean; don’t break Cayman hero */
+.page-header {
+  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
+}
+
+/* -----------------------------------------
+   Typography
+------------------------------------------ */
 .main-content h1,
 .main-content h2,
 .main-content h3 {
@@ -72,15 +94,18 @@
   border-bottom-color: rgba(21, 87, 153, 0.75);
 }
 
-/* Code blocks: cleaner */
+/* -----------------------------------------
+   Code blocks
+------------------------------------------ */
 .main-content pre {
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(15, 23, 42, 0.10);
-  background: #0b1020; /* dark code background looks premium */
+  background: #0b1020;
   color: rgba(255,255,255,0.92);
 }
 .main-content pre code { color: rgba(255,255,255,0.92); }
+
 .main-content code {
   border-radius: 8px;
   background: rgba(15, 23, 42, 0.06);
@@ -88,7 +113,7 @@
   padding: 0.12em 0.35em;
 }
 
-/* Horizontal rule: subtle */
+/* Horizontal rule */
 .main-content hr {
   border: none;
   height: 1px;
@@ -101,7 +126,7 @@
   margin: 2rem 0;
 }
 
-/* Images: round + shadow */
+/* Images */
 .main-content img {
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
@@ -109,7 +134,7 @@
 }
 
 /* -----------------------------------------
-   Card system (HTML blocks in markdown)
+   Cards
 ------------------------------------------ */
 .cards {
   display: grid;
@@ -120,6 +145,8 @@
 
 .card {
   grid-column: span 12;
+
+  /* Contrast vs content panel */
   background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
@@ -136,7 +163,7 @@
 
 .card:hover {
   border-color: var(--card-border-2);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
   box-shadow: var(--shadow);
 }
@@ -168,7 +195,7 @@
   gap: 8px;
 }
 
-/* Chips / tags */
+/* Chips */
 .chip {
   display: inline-flex;
   align-items: center;
@@ -201,44 +228,12 @@
 }
 
 /* -----------------------------------------
-   Callouts
------------------------------------------- */
-.callout {
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  background: rgba(15, 23, 42, 0.03);
-  padding: 14px 14px 12px;
-  margin: 1.2rem 0;
-}
-
-.callout__title {
-  font-weight: 750;
-  margin: 0 0 6px;
-  color: rgba(15, 23, 42, 0.96);
-}
-
-.callout__body {
-  margin: 0;
-  color: var(--text-muted);
-}
-
-.callout--accent {
-  border-color: rgba(21, 153, 87, 0.28);
-  background: rgba(21, 153, 87, 0.08);
-}
-
-.callout--note {
-  border-color: rgba(21, 87, 153, 0.25);
-  background: rgba(21, 87, 153, 0.06);
-}
-
-/* -----------------------------------------
    Evidence placeholders
 ------------------------------------------ */
 .evidence {
   border-radius: var(--radius-lg);
   border: 1px dashed rgba(15, 23, 42, 0.22);
-  background: rgba(15, 23, 42, 0.02);
+  background: rgba(255,255,255,0.75);
   padding: 14px;
   margin: 1rem 0;
 }
@@ -268,7 +263,7 @@
   padding: 10px 14px;
   border-radius: 12px;
   border: 1px solid rgba(15, 23, 42, 0.14);
-  background: rgba(15, 23, 42, 0.04);
+  background: rgba(255,255,255,0.75);
   color: rgba(15, 23, 42, 0.92) !important;
   box-shadow: var(--shadow-soft);
 }
@@ -283,18 +278,14 @@
   border-color: rgba(21, 153, 87, 0.40);
   background: linear-gradient(
     135deg,
-    rgba(21, 153, 87, 0.12),
-    rgba(21, 87, 153, 0.08)
+    rgba(21, 153, 87, 0.14),
+    rgba(21, 87, 153, 0.10)
   );
 }
 
 /* -----------------------------------------
-   Helpers
+   Tables
 ------------------------------------------ */
-.muted { color: var(--text-muted); }
-.faint { color: var(--text-faint); }
-
-/* Tables: cleaner on white */
 table {
   border-collapse: separate;
   border-spacing: 0;
@@ -302,6 +293,7 @@ table {
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(255,255,255,0.80);
 }
 
 th, td {
