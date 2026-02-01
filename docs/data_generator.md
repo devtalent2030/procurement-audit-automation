@@ -26,10 +26,12 @@ The generator is intentionally **dirty-by-design** so the audit engine has somet
 | Vendor Master   | `data/raw_erp_dump/vendor_master.csv` | Approved vendors (trusted reference)        |
 | Invoices Export | `data/raw_erp_dump/invoices.xlsx`     | Operational invoices dump (untrusted input) |
 
-### Open the generated files (your published docs copies)
+### Open the generated files (published docs copies)
 
-* Vendor Master: [data/raw_erp_dump/vendor_master.csv](data/raw_erp_dump/vendor_master.csv)
-* Invoices Export: [data/raw_erp_dump/invoices.xlsx](data/raw_erp_dump/invoices.xlsx)
+* Vendor Master: [vendor_master.csv](/data/raw_erp_dump/vendor_master.csv)
+* Invoices Export: [invoices.xlsx](/data/raw_erp_dump/invoices.xlsx)
+
+> Note: Browsers typically **download** Excel files instead of previewing them. That’s expected.
 
 ---
 
@@ -76,11 +78,13 @@ Invoices include vendor IDs that do **not** exist in the Vendor Master.
 **Evidence output produced later:**
 
 * `data/audit_reports/ghost_vendors_20260201_124647.csv`
-* Evidence file: [ghost_vendors_20260201_124647.csv](data/audit_reports/ghost_vendors_20260201_124647.csv)
+* Evidence file: [ghost_vendors_20260201_124647.csv](/data/audit_reports/ghost_vendors_20260201_124647.csv)
 
 **Screenshot proof:**
 
-![Generated files created (vendor master + invoices export)](assets/screenshots/a1-generated-files.png)
+<a class="doc-media" href="/assets/screenshots/a1-generated-files.png" target="_blank" rel="noopener">
+  <img src="/assets/screenshots/a1-generated-files.png" alt="Generated files created (vendor master + invoices export)">
+</a>
 
 ---
 
@@ -102,11 +106,13 @@ variance = abs(invoice_amount - po_amount) / po_amount
 **Evidence output produced later:**
 
 * `data/audit_reports/po_variance_20260201_124647.csv`
-* Evidence file: [po_variance_20260201_124647.csv](data/audit_reports/po_variance_20260201_124647.csv)
+* Evidence file: [po_variance_20260201_124647.csv](/data/audit_reports/po_variance_20260201_124647.csv)
 
 **Screenshot proof:**
 
-![Excel anomalies: ghost vendor + invoice/PO mismatch](assets/screenshots/a2-excel-anomalies.png)
+<a class="doc-media" href="/assets/screenshots/a2-excel-anomalies.png" target="_blank" rel="noopener">
+  <img src="/assets/screenshots/a2-excel-anomalies.png" alt="Excel anomalies: ghost vendor + invoice/PO mismatch">
+</a>
 
 ---
 
@@ -122,11 +128,13 @@ A portion of invoices are generated above a configurable high-value threshold.
 **Evidence output produced later:**
 
 * `data/audit_reports/high_value_20260201_125633.csv` (from dashboard export)
-* Evidence file: [high_value_20260201_125633.csv](data/audit_reports/high_value_20260201_125633.csv)
+* Evidence file: [high_value_20260201_125633.csv](/data/audit_reports/high_value_20260201_125633.csv)
 
 **Screenshot proof:**
 
-![Evidence folder showing timestamped CSV outputs](assets/screenshots/b2-evidence-folder.png)
+<a class="doc-media" href="/assets/screenshots/b2-evidence-folder.png" target="_blank" rel="noopener">
+  <img src="/assets/screenshots/b2-evidence-folder.png" alt="Evidence folder showing timestamped CSV outputs">
+</a>
 
 ---
 
@@ -152,12 +160,12 @@ The `Notes` field is where “human messiness” lives:
 **Evidence output produced later:**
 
 * `data/audit_reports/foip_ai_findings_20260131_224156.csv`
-* Evidence file: [foip_ai_findings_20260131_224156.csv](data/audit_reports/foip_ai_findings_20260131_224156.csv)
+* Evidence file: [foip_ai_findings_20260131_224156.csv](/data/audit_reports/foip_ai_findings_20260131_224156.csv)
 
 **FOIP evidence capture (video):**
 
-<video controls width="900">
-  <source src="assets/screenshots/c2-foip-evidence-csv.mp4" type="video/mp4">
+<video class="doc-media" controls preload="metadata">
+  <source src="/assets/screenshots/c2-foip-evidence-csv.mp4" type="video/mp4">
 </video>
 
 ---
@@ -170,17 +178,19 @@ The `Notes` field is where “human messiness” lives:
 
 ---
 
-## Video capture checklist
+## Demo capture checklist (optional)
 
 1. Run:
 
    ```bash
    python src/data_generator.py
    ```
+
 2. Open:
 
    * `data/raw_erp_dump/vendor_master.csv`
    * `data/raw_erp_dump/invoices.xlsx`
+
 3. Briefly scroll to show:
 
    * Vendor IDs in master
@@ -190,6 +200,8 @@ The `Notes` field is where “human messiness” lives:
      * variance between InvoiceAmount and PO_Amount
      * a Notes row with PII-like content
 
-**Clip A (your capture):**
+**Clip A (capture):**
 
-![Clip A — Data generator run](assets/demo/clip-a-generate.png)
+<a class="doc-media" href="/assets/demo/clip-a-generate.png" target="_blank" rel="noopener">
+  <img src="/assets/demo/clip-a-generate.png" alt="Clip A — Data generator run">
+</a>
