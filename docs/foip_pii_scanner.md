@@ -4,7 +4,6 @@ title: FOIP / PII Scanner
 permalink: /foip_pii_scanner/
 ---
 
-````md
 # 🔒 FOIP / PII Scanner (AI Auditor)
 
 > **Goal:** Catch privacy-risk text inside **Notes / Comments / Description** fields **before** exports get shared, emailed, archived, or turned into reports.
@@ -77,7 +76,7 @@ flowchart LR
   F --> G
   G --> H[foip_ai_findings_<timestamp>.csv]
   H --> I[Dashboard + Downloads]
-````
+```
 
 <div class="cards">
   <div class="card card--half">
@@ -239,21 +238,10 @@ flowchart LR
   </div>
 </div>
 
-<!-- 1) ADD VIDEO (your path is a PNG; rendering as responsive clickable media) -->
+<!-- Clip C media (PNG screenshot) -->
 
 <div class="evidence">
-  <div class="evidence__label">Clip C — AI scan (media)</div>
-  <div class="img-container">
-    <a href="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" target="_blank" rel="noopener">
-      <img src="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" alt="Clip C - AI scan media">
-    </a>
-  </div>
-</div>
-
-<!-- 2) ADD SCREENSHOT -->
-
-<div class="evidence">
-  <div class="evidence__label">Clip C — Screenshot</div>
+  <div class="evidence__label">Clip C — AI scan (screenshot)</div>
   <div class="img-container">
     <a href="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" target="_blank" rel="noopener">
       <img src="{{ '/assets/demo/clip-c-ai-scan.png' | relative_url }}" alt="Clip C - AI scan screenshot">
@@ -261,19 +249,24 @@ flowchart LR
   </div>
 </div>
 
-<!-- 3) ADD SCREENSHOT (CSV cannot display as image; link it as evidence artifact) -->
+<!-- Findings CSV: include BOTH a link + a screenshot image (use the screenshot for the docs page) -->
 
 <div class="evidence">
   <div class="evidence__label">FOIP/PII findings evidence (CSV)</div>
-  <p class="evidence__hint">Original path: <code>data/audit_reports/foip_ai_findings_20260131_224156.csv</code></p>
+  <p class="evidence__hint">CSV file in repo: <code>data/audit_reports/foip_ai_findings_20260131_224156.csv</code></p>
   <p class="card__desc">
-    <a class="btn btn--accent" href="{{ '/assets/evidence/foip_ai_findings_20260131_224156.csv' | relative_url }}" target="_blank" rel="noopener">
-      Open findings CSV
+    <a class="btn btn--accent" href="https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/foip_ai_findings_20260131_224156.csv" target="_blank" rel="noopener">
+      Open findings CSV (GitHub)
     </a>
   </p>
+  <div class="img-container">
+    <a href="{{ '/assets/screenshots/csv-foip-findings.png' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/screenshots/csv-foip-findings.png' | relative_url }}" alt="FOIP findings CSV screenshot">
+    </a>
+  </div>
 </div>
 
-<!-- 4) ADD SCREENSHOT (you provided an MP4; embed as responsive video) -->
+<!-- Dashboard home (MP4 video) -->
 
 <div class="evidence">
   <div class="evidence__label">Dashboard home (video)</div>
@@ -284,4 +277,3 @@ flowchart LR
     </video>
   </div>
 </div>
-```
