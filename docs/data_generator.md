@@ -1,3 +1,10 @@
+---
+layout: default
+title: Data Generator
+permalink: /data_generator/
+---
+
+
 # Data Generator — Synthetic ERP Exports (Dirty-by-Design)
 
 This project includes a **data generator** that creates realistic-looking procurement exports without using any real organizational data.

@@ -242,37 +242,37 @@
 <div class="cards">
   <div class="card card--third">
     <div class="card__kicker">System</div>
-    <div class="card__title"><a href="architecture.md">Architecture overview</a></div>
+    <div class="card__title"><a href="architecture/">Architecture overview</a></div>
     <p class="card__desc">Pipeline flow, components, boundaries, and outputs.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Engine</div>
-    <div class="card__title"><a href="logic_engine_concepts.md">Audit rule engine concepts</a></div>
+    <div class="card__title"><a href="logic_engine_concepts/">Audit rule engine concepts</a></div>
     <p class="card__desc">How rules map to evidence tables and why the checks are audit-grade.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Data</div>
-    <div class="card__title"><a href="data_generator.md">Data generator</a></div>
+    <div class="card__title"><a href="data_generator/">Data generator</a></div>
     <p class="card__desc">Synthetic “dirty ERP” simulation for safe development and repeatable demos.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Privacy</div>
-    <div class="card__title"><a href="foip_pii_scanner.md">FOIP/PII scanner</a></div>
+    <div class="card__title"><a href="foip_pii_scanner/">FOIP/PII scanner</a></div>
     <p class="card__desc">NER-based risk detection and why it’s treated as an exception list.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Quality</div>
-    <div class="card__title"><a href="testing_ci.md">Testing & CI</a></div>
+    <div class="card__title"><a href="testing_ci/">Testing &amp; CI</a></div>
     <p class="card__desc">Unit tests, CI pipeline behavior, and AI step handling.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Evidence</div>
-    <div class="card__title"><a href="demo.md">Demo & artifacts</a></div>
+    <div class="card__title"><a href="demo/">Demo &amp; artifacts</a></div>
     <p class="card__desc">What to record and where to place screenshots/videos.</p>
   </div>
 </div>
@@ -280,6 +280,7 @@
 ---
 
 <details>
+
 <summary><strong>🧠 Genius Mode: why this design is audit-grade</strong></summary>
 
 <div class="cards">

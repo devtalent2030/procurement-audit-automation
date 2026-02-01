@@ -1,8 +1,14 @@
-````md
+---
+layout: default
+title: FOIP / PII Scanner
+permalink: /foip_pii_scanner/
+---
+
 # 🔒 FOIP / PII Scanner (AI Auditor)
 
 > **Goal:** Catch privacy-risk text inside **Notes / Comments / Description** fields **before** exports get shared, emailed, archived, or turned into reports.  
 > This is a **fast pre-screen** that produces **evidence tables** for review (not a legal determination).
+
 
 <div class="cards">
   <div class="card card--half">

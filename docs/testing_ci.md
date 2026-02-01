@@ -1,4 +1,10 @@
-# ✅ Testing & CI Credibility (Reliability Story)
+---
+layout: default
+title: Testing & CI
+permalink: /testing_ci/
+---
+
+# Testing & CI Credibility (Reliability Story)
 
 This project is intentionally built so the **audit results are reproducible**, and the **core logic is testable without network access**.
 
@@ -28,7 +34,7 @@ Meaning:
 * We verify *what the functions produce* (tables/flags/decisions).
 * We avoid tests that depend on external services, model downloads, or machine-specific paths.
 
-### ✅ What is tested
+### What is tested
 
 | Area                    | What the test proves                               | Why it matters                               |
 | ----------------------- | -------------------------------------------------- | -------------------------------------------- |
@@ -44,7 +50,7 @@ Meaning:
 
 ## What is mocked (and why)
 
-### 🤖 HuggingFace model loading is mocked in unit tests
+### HuggingFace model loading is mocked in unit tests
 
 The AI scanner uses a NER pipeline (which normally may download weights). In tests, the pipeline is **replaced with a fake predictable model**.
 

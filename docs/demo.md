@@ -1,3 +1,10 @@
+---
+layout: default
+title: Demo & Evidence Artifacts
+permalink: /demo/
+---
+
+
 # Demo & Evidence
 
 This section documents the full end-to-end demo flow for the project, including commands, outputs, and exportable evidence tables.

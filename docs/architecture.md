@@ -1,3 +1,9 @@
+---
+layout: default
+title: System Architecture & Audit Pipeline
+permalink: /architecture/
+---
+
 # 🏗️ System Architecture & Audit Pipeline (Project 2)
 
 <div class="cards">
