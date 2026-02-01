@@ -13,7 +13,7 @@
   /* Page */
   --page-bg: #f3f5f8;          /* soft grey */
   --page-bg-2: #eef2f6;        /* subtle variation */
-  --content-bg: rgba(255,255,255,0.85);
+  --content-bg: rgba(255,255,255,0.88);
 
   /* Cards */
   --card-bg: #ffffff;
@@ -40,28 +40,49 @@
 }
 
 /* -----------------------------------------
-   Page background + content container
+   PAGE BACKGROUND (the real canvas)
 ------------------------------------------ */
 html, body {
   background: radial-gradient(1200px 600px at 20% 0%, #ffffff 0%, var(--page-bg) 55%, var(--page-bg-2) 100%) !important;
+  color: var(--text);
 }
 
-/* Cayman wraps content in .main-content; give it a subtle “panel” */
+/* Cayman sometimes paints a white body */
+body {
+  background-color: transparent !important;
+}
+
+/* -----------------------------------------
+   Cayman layout surfaces (remove white strips)
+------------------------------------------ */
+/* Ensure the main content doesn't sit on a white "sheet" */
 .main-content {
   color: var(--text);
   line-height: 1.75;
 
-  /* Premium feel: panel on top of grey */
-  background: var(--content-bg);
+  background: var(--content-bg) !important;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 18px;
   box-shadow: 0 20px 55px rgba(2, 6, 23, 0.10);
 
-  /* Cayman already has padding; we gently add */
   padding: 2rem 2.2rem;
 }
 
-/* Keep header clean; don’t break Cayman hero */
+/* Some Cayman versions wrap content; keep background transparent */
+.page-header,
+.site-footer,
+.site-footer-owner,
+.site-footer-credits {
+  background: transparent !important;
+}
+
+/* Footer polish */
+.site-footer {
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--text-muted) !important;
+}
+
+/* Optional: keep header looking premium */
 .page-header {
   box-shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
 }
@@ -78,11 +99,14 @@ html, body {
 
 .main-content p,
 .main-content li,
-.main-content blockquote,
-.main-content table,
-.main-content td,
-.main-content th {
-  color: var(--text);
+.main-content ul,
+.main-content ol,
+.main-content blockquote {
+  color: var(--text) !important;
+}
+
+.main-content li::marker {
+  color: var(--text-faint);
 }
 
 .main-content a {
@@ -104,6 +128,7 @@ html, body {
   background: #0b1020;
   color: rgba(255,255,255,0.92);
 }
+
 .main-content pre code { color: rgba(255,255,255,0.92); }
 
 .main-content code {
@@ -146,7 +171,6 @@ html, body {
 .card {
   grid-column: span 12;
 
-  /* Contrast vs content panel */
   background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
@@ -233,7 +257,7 @@ html, body {
 .evidence {
   border-radius: var(--radius-lg);
   border: 1px dashed rgba(15, 23, 42, 0.22);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.80);
   padding: 14px;
   margin: 1rem 0;
 }
@@ -263,7 +287,7 @@ html, body {
   padding: 10px 14px;
   border-radius: 12px;
   border: 1px solid rgba(15, 23, 42, 0.14);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.80);
   color: rgba(15, 23, 42, 0.92) !important;
   box-shadow: var(--shadow-soft);
 }
@@ -293,12 +317,13 @@ table {
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid rgba(15, 23, 42, 0.10);
-  background: rgba(255,255,255,0.80);
+  background: rgba(255,255,255,0.88);
 }
 
 th, td {
   padding: 10px 12px;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--text);
 }
 
 thead th {
@@ -309,3 +334,9 @@ thead th {
 tbody tr:hover td {
   background: rgba(15, 23, 42, 0.02);
 }
+
+/* -----------------------------------------
+   Small helpers
+------------------------------------------ */
+.muted { color: var(--text-muted); }
+.faint { color: var(--text-faint); }
