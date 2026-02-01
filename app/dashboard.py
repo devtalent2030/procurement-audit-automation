@@ -242,7 +242,14 @@ if "rule_results" in st.session_state:
     def status_card(col, label, count, pass_if_zero=True):
         ok = (count == 0) if pass_if_zero else (count > 0)
         col.metric(label, count)
-        col.success("PASS ✅") if ok else col.error("FAIL 🚨")
+
+        if ok:
+            col.success("PASS ✅")
+        else:
+            col.error("FAIL 🚨")
+
+        return None
+
 
     status_card(col1, "Ghost Vendors", len(ghosts), pass_if_zero=True)
     status_card(col2, "PO Variance Breaches", len(variance_failures), pass_if_zero=True)
