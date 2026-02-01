@@ -63,20 +63,28 @@ permalink: /foip_pii_scanner/
 
 ---
 
-## 🔁 Data flow during a run
+## AI Rules Scanner
 
-```mermaid
-flowchart LR
-  A[Invoices.xlsx] --> B[Read Notes column]
-  B --> C{Empty/NaN?}
-  C -->|Yes| D[Skip]
-  C -->|No| E[NER model: PERSON detection]
-  C --> F[Heuristic checks: email]
-  E --> G[Flags + evidence row]
-  F --> G
-  G --> H[foip_ai_findings_<timestamp>.csv]
-  H --> I[Dashboard + Downloads]
-```
+<div class="evidence">
+  <div class="evidence__label">AI Rules Scanner Flow Diagram</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/foip_risk_funnel.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/foip_risk_funnel.png" alt="Pipeline Flow Diagram">
+    </a>
+  </div>
+</div>
+
+## threshold_tradeoff
+
+<div class="evidence">
+  <div class="evidence__label"> threshold_tradeoff </div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/threshold_tradeoff.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/threshold_tradeoff.png" alt="Pipeline Flow Diagram">
+    </a>
+  </div>
+</div>
+
 
 <div class="cards">
   <div class="card card--half">
@@ -103,7 +111,7 @@ flowchart LR
 
 ---
 
-## 🎚️ Confidence threshold (policy dial)
+##  Confidence threshold (policy dial)
 
 <div class="cards">
   <div class="card card--half">
@@ -131,7 +139,7 @@ flowchart LR
 
 ---
 
-## ⚖️ False positives vs false negatives
+##  False positives vs false negatives
 
 <div class="cards">
   <div class="card card--half">
@@ -159,7 +167,7 @@ flowchart LR
 
 ---
 
-## ⚙️ Performance & stability
+##  Performance & stability
 
 <div class="cards">
   <div class="card card--half">
@@ -185,7 +193,7 @@ flowchart LR
 
 ---
 
-## ✅ What “good” looks like (expected outputs)
+##  What “good” looks like (expected outputs)
 
 <div class="cards">
   <div class="card card--half">
@@ -212,7 +220,7 @@ flowchart LR
 
 ---
 
-## 📌 Evidence (media)
+##  Evidence (media)
 
 <div class="cards">
   <div class="card card--half">
