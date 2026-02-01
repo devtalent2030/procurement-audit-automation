@@ -1,9 +1,9 @@
 ---
+
 layout: default
 title: Data Generator
 permalink: /data_generator/
----
-
+---------------------------
 
 # Data Generator — Synthetic ERP Exports (Dirty-by-Design)
 
@@ -26,6 +26,11 @@ The generator is intentionally **dirty-by-design** so the audit engine has somet
 | --------------- | ------------------------------------- | ------------------------------------------- |
 | Vendor Master   | `data/raw_erp_dump/vendor_master.csv` | Approved vendors (trusted reference)        |
 | Invoices Export | `data/raw_erp_dump/invoices.xlsx`     | Operational invoices dump (untrusted input) |
+
+### Open the generated files (your published docs copies)
+
+* Vendor Master: [data/raw_erp_dump/vendor_master.csv](data/raw_erp_dump/vendor_master.csv)
+* Invoices Export: [data/raw_erp_dump/invoices.xlsx](data/raw_erp_dump/invoices.xlsx)
 
 ---
 
@@ -71,11 +76,12 @@ Invoices include vendor IDs that do **not** exist in the Vendor Master.
 
 **Evidence output produced later:**
 
-* `data/audit_reports/ghost_vendors_<timestamp>.csv`
+* `data/audit_reports/ghost_vendors_20260201_124647.csv`
+* Evidence file: [ghost_vendors_20260201_124647.csv](data/audit_reports/ghost_vendors_20260201_124647.csv)
 
-**Screenshot placeholder:**
+**Screenshot proof:**
 
-* *(Add screenshot here: vendor_master.csv vs invoices showing VENDOR-999)*
+![Generated files created (vendor master + invoices export)](assets/screenshots/a1-generated-files.png)
 
 ---
 
@@ -96,11 +102,12 @@ variance = abs(invoice_amount - po_amount) / po_amount
 
 **Evidence output produced later:**
 
-* `data/audit_reports/po_variance_<timestamp>.csv`
+* `data/audit_reports/po_variance_20260201_124647.csv`
+* Evidence file: [po_variance_20260201_124647.csv](data/audit_reports/po_variance_20260201_124647.csv)
 
-**Screenshot placeholder:**
+**Screenshot proof:**
 
-* *(Add screenshot here: Excel export where InvoiceAmount vs PO_Amount differs)*
+![Excel anomalies: ghost vendor + invoice/PO mismatch](assets/screenshots/a2-excel-anomalies.png)
 
 ---
 
@@ -115,11 +122,12 @@ A portion of invoices are generated above a configurable high-value threshold.
 
 **Evidence output produced later:**
 
-* `data/audit_reports/high_value_<timestamp>.csv` (from dashboard export)
+* `data/audit_reports/high_value_20260201_125633.csv` (from dashboard export)
+* Evidence file: [high_value_20260201_125633.csv](data/audit_reports/high_value_20260201_125633.csv)
 
-**Screenshot placeholder:**
+**Screenshot proof:**
 
-* *(Add screenshot here: dashboard “High-Value Invoices” tab + exported CSV open in Excel)*
+![Evidence folder showing timestamped CSV outputs](assets/screenshots/b2-evidence-folder.png)
 
 ---
 
@@ -144,11 +152,14 @@ The `Notes` field is where “human messiness” lives:
 
 **Evidence output produced later:**
 
-* `data/audit_reports/foip_ai_findings_<timestamp>.csv`
+* `data/audit_reports/foip_ai_findings_20260131_224156.csv`
+* Evidence file: [foip_ai_findings_20260131_224156.csv](data/audit_reports/foip_ai_findings_20260131_224156.csv)
 
-**Screenshot placeholder:**
+**FOIP evidence capture (video):**
 
-* *(Add screenshot here: invoices.xlsx showing PII-like text in Notes)*
+<video controls width="900">
+  <source src="assets/screenshots/c2-foip-evidence-csv.mp4" type="video/mp4">
+</video>
 
 ---
 
@@ -161,8 +172,6 @@ The `Notes` field is where “human messiness” lives:
 ---
 
 ## Video capture checklist
-
-If you want a clean demo recording:
 
 1. Run:
 
@@ -182,6 +191,6 @@ If you want a clean demo recording:
      * variance between InvoiceAmount and PO_Amount
      * a Notes row with PII-like content
 
-**Video placeholder:**
+**Clip A (your capture):**
 
-* *(Add link here: “Data generation run + quick file walkthrough”)*
+![Clip A — Data generator run](assets/demo/clip-a-generate.png)

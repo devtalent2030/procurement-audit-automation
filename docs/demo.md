@@ -1,25 +1,25 @@
 ---
+
 layout: default
 title: Demo & Evidence Artifacts
 permalink: /demo/
----
-
+-----------------
 
 # Demo & Evidence
 
-This section documents the full end-to-end demo flow for the project, including commands, outputs, and exportable evidence tables.
+This page documents the end-to-end demo flow for the project and links directly to the **actual clips, screenshots, inputs, and evidence exports already in this repo**.
 
 ---
 
 ## Demo Flow (5 short clips)
 
-Each clip is designed to be **20–40 seconds** and shows **one action + one result**.
+Each clip shows **one action + one result**.
 
 ---
 
 ## Clip A — Generate Dirty ERP Data
 
-**Caption:** Day 1 — Generate ERP dump with anomalies
+**Caption:** Generate ERP dump with seeded anomalies
 
 **Command:**
 
@@ -27,30 +27,31 @@ Each clip is designed to be **20–40 seconds** and shows **one action + one res
 python src/data_generator.py
 ```
 
-### Expected outputs
+### Outputs created
 
-* `data/raw_erp_dump/invoices.xlsx`
-* `data/raw_erp_dump/vendor_master.csv`
+* [`data/raw_erp_dump/invoices.xlsx`](data/raw_erp_dump/invoices.xlsx)
+* [`data/raw_erp_dump/vendor_master.csv`](data/raw_erp_dump/vendor_master.csv)
 
-### What to capture
+### What this clip shows
 
-* Terminal output confirming file generation
-* Folder view showing the two files created
-* Excel view showing:
+* Files created successfully
+* Quick peek at the generated dataset (ghost vendor / PO mismatch seeded)
 
-  * one ghost vendor example
-  * one PO mismatch example
+**Clip (image):**
 
-📌 **VIDEO PLACEHOLDER:** `assets/demo/clip-a-generate.mp4`
-📌 **SCREENSHOT PLACEHOLDER:** terminal output after running generator
-📌 **SCREENSHOT PLACEHOLDER:** `data/raw_erp_dump/` folder showing files
-📌 **SCREENSHOT PLACEHOLDER:** Excel highlight (ghost vendor + mismatch)
+![Clip A — Generate Dirty ERP Data](assets/demo/clip-a-generate.png)
+
+**Screenshots:**
+
+* ![Generated files created](assets/screenshots/a1-generated-files.png)
+* ![Excel anomalies view 1](assets/screenshots/a2-excel-anomalies.png)
+* ![Excel anomalies view 2](assets/screenshots/a2-excel-anomalies1.png)
 
 ---
 
 ## Clip B — Rule Engine Detects Exceptions
 
-**Caption:** Day 2 — Config-driven rule engine detects ghost vendors & PO variance
+**Caption:** Config-driven rule engine detects ghost vendors & PO variance
 
 **Command:**
 
@@ -58,27 +59,31 @@ python src/data_generator.py
 python src/rule_engine.py
 ```
 
-### Expected outputs
+### Evidence exports (example run)
 
-Exports saved under:
+These are real files from the repo (timestamped):
 
-* `data/audit_reports/ghost_vendors_<timestamp>.csv`
-* `data/audit_reports/po_variance_<timestamp>.csv`
+* [`data/audit_reports/ghost_vendors_20260201_125633.csv`](data/audit_reports/ghost_vendors_20260201_125633.csv)
+* [`data/audit_reports/po_variance_20260201_125633.csv`](data/audit_reports/po_variance_20260201_125633.csv)
 
-### What to capture
+### What this clip shows
 
-* Terminal output showing ghost vendor count and PO variance breaches
-* Folder view showing the exported CSV evidence files
+* Rule engine summary output (counts)
+* Evidence CSVs produced under `data/audit_reports/`
 
-📌 **VIDEO PLACEHOLDER:** `assets/demo/clip-b-rule-engine.mp4`
-📌 **SCREENSHOT PLACEHOLDER:** terminal output showing violations
-📌 **SCREENSHOT PLACEHOLDER:** `data/audit_reports/` folder showing new CSV outputs
+**Clip (image):**
+
+![Clip B — Rule Engine](assets/demo/clip-b-rule-engine.png)
+
+**Screenshot:**
+
+* ![Evidence folder after run](assets/screenshots/b2-evidence-folder.png)
 
 ---
 
 ## Clip C — FOIP/PII Scan (AI/NLP)
 
-**Caption:** Day 3 — AI detects privacy risks inside unstructured Notes
+**Caption:** AI flags privacy risk inside unstructured Notes
 
 **Command:**
 
@@ -86,30 +91,28 @@ Exports saved under:
 python src/ai_auditor.py
 ```
 
-### Expected outputs
+### Evidence export (example run)
 
-* Console results listing flagged content (e.g., possible emails / detected names)
-* Evidence export (when enabled):
+* [`data/audit_reports/foip_ai_findings_20260201_125633.csv`](data/audit_reports/foip_ai_findings_20260201_125633.csv)
 
-  * `data/audit_reports/foip_ai_findings_<timestamp>.csv`
+### What this clip shows
 
-### What to capture
+* Findings printed during the scan
+* Timestamped findings CSV written to `data/audit_reports/`
 
-* Terminal output showing AI findings (rows flagged)
-* Folder view showing the findings CSV in `data/audit_reports/`
+**Clip (image):**
 
-📌 **VIDEO PLACEHOLDER:** `assets/demo/clip-c-ai-scan.mp4`
-📌 **SCREENSHOT PLACEHOLDER:** terminal output showing AI findings
-📌 **SCREENSHOT PLACEHOLDER:** `data/audit_reports/` showing FOIP/PII findings file
+![Clip C — AI FOIP/PII Scan](assets/demo/clip-c-ai-scan.png)
 
-> Note: CI runs are configured to skip AI by default using `SKIP_AI=1` for stability.
-> The AI scan is intended for local demo runs.
+**Short walkthrough (video):**
+
+* [`assets/screenshots/c2-foip-evidence-csv.mp4`](assets/screenshots/c2-foip-evidence-csv.mp4)
 
 ---
 
 ## Clip D — Streamlit Dashboard
 
-**Caption:** Day 4 — Interactive dashboard + exportable evidence tables
+**Caption:** Dashboard summary + exportable evidence tables
 
 **Command:**
 
@@ -117,28 +120,27 @@ python src/ai_auditor.py
 streamlit run app/dashboard.py
 ```
 
-### What to do in the UI
+### What this clip shows
 
-* Keep **Use sample generated data** enabled (no uploads needed)
-* Click **Run Audit**
-* Show summary cards:
+* Summary cards (Ghost Vendors / PO Variance / High-Value / FOIP Findings)
+* Export/download actions
 
-  * Ghost Vendors
-  * PO Variance Breaches
-  * High-Value Invoices
-  * FOIP/PII Findings
-* Use the export buttons to download evidence tables
+**Clip (video):**
 
-📌 **VIDEO PLACEHOLDER:** `assets/demo/clip-d-dashboard.mp4`
-📌 **SCREENSHOT PLACEHOLDER:** dashboard summary cards section
-📌 **SCREENSHOT PLACEHOLDER:** evidence export section + download buttons
-📌 **SCREENSHOT PLACEHOLDER (optional):** downloaded CSV files visible locally
+<video controls width="100%">
+  <source src="assets/demo/clip-d-dashboard.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+**Dashboard UI walkthrough (video):**
+
+* [`assets/screenshots/d1-dashboard-home.mp4`](assets/screenshots/d1-dashboard-home.mp4)
 
 ---
 
 ## Clip E — Tests & CI
 
-**Caption:** Day 5 — Unit tests + CI/CD confirm reliability
+**Caption:** Tests + CI confirm reliability
 
 ### Local unit tests
 
@@ -148,45 +150,40 @@ streamlit run app/dashboard.py
 pytest -q
 ```
 
-📌 **SCREENSHOT PLACEHOLDER:** terminal showing `4 passed`
+### CI evidence
 
-### GitHub Actions (CI)
+**Clip (image):**
 
-CI runs the pipeline in a CI-safe mode:
+![Clip E — Tests & CI](assets/demo/clip-e-tests-ci.png)
 
-* Generates data
-* Runs rule engine
-* Skips AI (by design)
-* Runs unit tests
+**Screenshot:**
 
-📌 **SCREENSHOT PLACEHOLDER:** GitHub Actions run summary ✅
-📌 **SCREENSHOT PLACEHOLDER:** logs showing `Skipping AI auditor (SKIP_AI=1)`
+* ![GitHub Actions success](assets/screenshots/e2-github-actions-success.png)
 
 ---
 
-# Outputs Checklist
+# Outputs
 
 ## Raw inputs
 
-* `data/raw_erp_dump/invoices.xlsx`
-* `data/raw_erp_dump/vendor_master.csv`
-
-📌 **SCREENSHOT PLACEHOLDER:** raw files after Clip A
+* [`data/raw_erp_dump/invoices.xlsx`](data/raw_erp_dump/invoices.xlsx)
+* [`data/raw_erp_dump/vendor_master.csv`](data/raw_erp_dump/vendor_master.csv)
 
 ## Evidence exports
 
-Saved under:
+All saved under [`data/audit_reports/`](data/audit_reports/).
 
-* `data/audit_reports/`
+Representative evidence files already present:
 
-Typical files:
+* Ghost vendors: [`data/audit_reports/ghost_vendors_20260201_125633.csv`](data/audit_reports/ghost_vendors_20260201_125633.csv)
+* PO variance: [`data/audit_reports/po_variance_20260201_125633.csv`](data/audit_reports/po_variance_20260201_125633.csv)
+* High value: [`data/audit_reports/high_value_20260201_125633.csv`](data/audit_reports/high_value_20260201_125633.csv)
+* FOIP/PII findings: [`data/audit_reports/foip_ai_findings_20260201_125633.csv`](data/audit_reports/foip_ai_findings_20260201_125633.csv)
+* AI risk findings (aggregate): [`data/audit_reports/ai_risk_findings.csv`](data/audit_reports/ai_risk_findings.csv)
 
-* `ghost_vendors_<timestamp>.csv`
-* `po_variance_<timestamp>.csv`
-* `high_value_<timestamp>.csv`
-* `foip_ai_findings_<timestamp>.csv` (local demo)
+## Run logs
 
-📌 **SCREENSHOT PLACEHOLDER:** `data/audit_reports/` folder after a run
+* [`data/audit_reports/run_logs/`](data/audit_reports/run_logs/)
 
 ---
 
@@ -195,5 +192,5 @@ Typical files:
 * **Architecture Overview:** [architecture.md](architecture.md)
 * **Audit Rule Engine Concepts:** [logic_engine_concepts.md](logic_engine_concepts.md)
 * **Data Generator:** [data_generator.md](data_generator.md)
-* **FOIP/PII Scanner:** [foip_pii_scanner.md](foip_pii_scanner.md)
+* **FOIP / PII Scanner:** [foip_pii_scanner.md](foip_pii_scanner.md)
 * **Testing & CI:** [testing_ci.md](testing_ci.md)

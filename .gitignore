@@ -3,3 +3,7 @@ __pycache__/
 *.csv
 .env
 /venv
+data/.DS_Store
+docs/.DS_Store
+docs/assets/.DS_Store
+docs/data/.DS_Store

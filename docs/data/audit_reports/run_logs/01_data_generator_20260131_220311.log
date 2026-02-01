@@ -1,0 +1,11 @@
+🚀 Starting 'Dirty' Data Generation Pipeline...
+✅ Master Vendor List (The Truth) saved to data/raw_erp_dump/vendor_master.csv
+✅ Raw Invoice Dump (The Reality) saved to data/raw_erp_dump/invoices.xlsx
+
+Sample Data (Look for PII in 'Notes'):
+     VendorID  InvoiceAmount                                         Notes
+0  VENDOR-007       45510.52                             Delivered on time
+1  VENDOR-007       30500.10                                  Net 30 Terms
+2  VENDOR-015        4447.42  Urgent: Call personal cell +1 (236) 166-0738
+3  VENDOR-016       39527.62                         Software subscription
+4  VENDOR-014       23918.08                            Annual maintenance

@@ -13,7 +13,7 @@ def load_auditor_brain():
     Initializes the Named Entity Recognition (NER) pipeline.
     Uses a standard BERT model fine-tuned for entity detection.
     """
-    print("🧠 Waking up the AI Auditor (Loading Model)...")
+    print(" Waking up the AI Auditor (Loading Model)...")
     # We use a specific model 'dslim/bert-base-NER' known for good performance
     pii_identifier = pipeline("ner", model="dslim/bert-base-NER", aggregation_strategy="simple")
     return pii_identifier

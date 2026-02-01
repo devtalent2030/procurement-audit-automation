@@ -1,8 +1,9 @@
 ---
+
 layout: default
 title: Testing & CI
 permalink: /testing_ci/
----
+-----------------------
 
 # Testing & CI Credibility (Reliability Story)
 
@@ -18,8 +19,8 @@ This project is intentionally built so the **audit results are reproducible**, a
 
 > **Placeholders (add evidence):**
 >
-> * **[Screenshot]** GitHub Actions run: passing pipeline
-> * **[Video]** Local run: `./run_audit.sh` end-to-end
+> * **[Screenshot]** GitHub Actions run: passing pipeline — [`assets/screenshots/e2-github-actions-success.png`](assets/screenshots/e2-github-actions-success.png)
+> * **[Video]** Local run: `./run_audit.sh` end-to-end — [`assets/demo/clip-d-dashboard.mp4`](assets/demo/clip-d-dashboard.mp4)
 
 ---
 
@@ -44,7 +45,7 @@ Meaning:
 | FOIP/PII scan behavior  | Name/email detection triggers as expected          | Prevents privacy leaks in notes/comments     |
 | AI confidence threshold | Low-confidence entities don’t trigger false alerts | Reduces “privacy alert noise”                |
 
-> **[Screenshot]** `pytest -q` showing 4/4 passing locally
+> **[Screenshot]** `pytest -q` showing 4/4 passing locally — [`assets/demo/clip-e-tests-ci.png`](assets/demo/clip-e-tests-ci.png)
 
 ---
 
@@ -70,7 +71,7 @@ This ensures:
 * email heuristic behavior
 * output schema (`InvoiceID`, `RiskContent`, `DetectedFlags`)
 
-> **[Screenshot]** Test file showing monkeypatch / fake pipeline
+> **[Screenshot]** Test file showing monkeypatch / fake pipeline — [`assets/demo/clip-e-tests-ci.png`](assets/demo/clip-e-tests-ci.png)
 
 ---
 
@@ -92,7 +93,7 @@ This mirrors real enterprise practice:
 * **Production/analyst run:** full scan with AI
 * **CI run:** verify rule engine + scanner logic with deterministic stubs
 
-> **[Screenshot]** GitHub Actions logs showing “Skipping AI auditor (SKIP_AI=1)”
+> **[Screenshot]** GitHub Actions logs showing “Skipping AI auditor (SKIP_AI=1)” — [`assets/screenshots/e2-github-actions-success.png`](assets/screenshots/e2-github-actions-success.png)
 
 ---
 
@@ -112,7 +113,7 @@ The pipeline outputs **evidence CSVs** (for screenshots / demo assets) and **run
 * `data/audit_reports/*.csv`
 * `data/audit_reports/run_logs/*.log`
 
-> **[Screenshot]** GitHub Actions log showing evidence exports
+> **[Screenshot]** GitHub Actions log showing evidence exports — [`assets/screenshots/b2-evidence-folder.png`](assets/screenshots/b2-evidence-folder.png)
 
 ---
 
@@ -158,4 +159,4 @@ A green CI run means:
 * AI scanner decision logic behaves correctly (mocked brain)
 * Evidence tables are generated consistently
 
-> **[Screenshot]** Actions tab showing ✅ succeeded
+> **[Screenshot]** Actions tab showing ✅ succeeded — [`assets/screenshots/e2-github-actions-success.png`](assets/screenshots/e2-github-actions-success.png)

@@ -1,0 +1,82 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+______________ test_rule_engine_catches_ghost_vendor_and_variance ______________
+
+tmp_path = PosixPath('/private/var/folders/th/vgjgx_8n51d83dzjyft_m1rh0000gq/T/pytest-of-kuzie/pytest-0/test_rule_engine_catches_ghost0')
+capsys = <_pytest.capture.CaptureFixture object at 0x12418c340>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12418c730>
+
+    def test_rule_engine_catches_ghost_vendor_and_variance(tmp_path, capsys, monkeypatch):
+        """
+        Integration-style unit test:
+        - sets up known-bad inputs
+        - runs run_audit_checks()
+        - asserts the printed output contains expected violations
+    
+        Why print-based assert?
+        Because your current rule_engine.py reports via stdout.
+        This test proves the tool signals the right failures without rewriting your engine yet.
+        """
+        _write_fixture_files(tmp_path)
+    
+        # Run in temp directory so rule_engine reads the temp config + data paths
+        monkeypatch.chdir(tmp_path)
+    
+>       from src.rule_engine import run_audit_checks
+E       ModuleNotFoundError: No module named 'src'
+
+/Users/kuzie/Documents/GitHub/procurement-audit-automation/tests/test_auditors.py:77: ModuleNotFoundError
+_________________________ test_load_config_reads_yaml __________________________
+
+tmp_path = PosixPath('/private/var/folders/th/vgjgx_8n51d83dzjyft_m1rh0000gq/T/pytest-of-kuzie/pytest-0/test_load_config_reads_yaml0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x125a2ff10>
+
+    def test_load_config_reads_yaml(tmp_path, monkeypatch):
+        """
+        Pure unit test: proves config parsing works.
+        """
+        (tmp_path / "config").mkdir(parents=True, exist_ok=True)
+        (tmp_path / "config" / "audit_rules.yaml").write_text(
+            "financial_limits:\n"
+            "  max_po_variance: 0.25\n"
+        )
+    
+        monkeypatch.chdir(tmp_path)
+    
+>       from src.rule_engine import load_config
+E       ModuleNotFoundError: No module named 'src'
+
+/Users/kuzie/Documents/GitHub/procurement-audit-automation/tests/test_auditors.py:99: ModuleNotFoundError
+_______ test_ai_auditor_flags_name_and_email_without_downloading_models ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x125a2f880>
+
+    def test_ai_auditor_flags_name_and_email_without_downloading_models(monkeypatch):
+        """
+        True unit test for ai_auditor:
+        - DOES NOT load HuggingFace
+        - monkeypatches the NER brain with a fake predictable model
+        """
+>       from src import ai_auditor
+E       ModuleNotFoundError: No module named 'src'
+
+tests/test_auditors.py:111: ModuleNotFoundError
+________________ test_ai_auditor_respects_confidence_threshold _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x125a44ca0>
+
+    def test_ai_auditor_respects_confidence_threshold(monkeypatch):
+        """
+        Ensures low-confidence entities do NOT trigger NAME_DETECTED.
+        Email heuristic should still trigger if email exists.
+        """
+>       from src import ai_auditor
+E       ModuleNotFoundError: No module named 'src'
+
+tests/test_auditors.py:143: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_auditors.py::test_rule_engine_catches_ghost_vendor_and_variance
+FAILED tests/test_auditors.py::test_load_config_reads_yaml - ModuleNotFoundEr...
+FAILED tests/test_auditors.py::test_ai_auditor_flags_name_and_email_without_downloading_models
+FAILED tests/test_auditors.py::test_ai_auditor_respects_confidence_threshold
+4 failed in 0.60s

@@ -1,0 +1,15 @@
+🔍 Audit Started. Using Variance Limit: 10%
+🚨 ALERT: Found 3 Ghost Vendors!
+      InvoiceID    VendorID        VendorName
+20  INV-2499-xX  VENDOR-999  Unknown Shell Co
+29  INV-2428-iJ  VENDOR-999  Unknown Shell Co
+46  INV-1182-HL  VENDOR-999  Unknown Shell Co
+⚠️  WARNING: Found 3 Budget Variances > 10%
+      InvoiceID  InvoiceAmount  PO_Amount  Variance
+7   INV-7212-tv       35525.18   28420.14      0.25
+8   INV-5703-rR        9861.26    7889.01      0.25
+27  INV-5621-JY       46182.74   36946.19      0.25
+
+📄 Evidence exports saved:
+   - data/audit_reports/ghost_vendors_20260131_214033.csv
+   - data/audit_reports/po_variance_20260131_214033.csv

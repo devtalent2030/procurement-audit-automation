@@ -1,14 +1,14 @@
 ---
+
 layout: default
 title: Audit Rule Engine Concepts
 permalink: /logic_engine_concepts/
----
+----------------------------------
 
-> **Goal:** Turn messy ERP exports (Excel/CSV) into **audit-grade evidence** using **config-driven rules**.  
+> **Goal:** Turn messy ERP exports (Excel/CSV) into **audit-grade evidence** using **config-driven rules**.
 > The engine is designed to be readable by non-technical reviewers and defensible to technical auditors.
 
 # Audit Rule Engine Concepts
-
 
 <div class="cards">
   <div class="card card--half">
@@ -159,7 +159,7 @@ permalink: /logic_engine_concepts/
 
 <div class="evidence">
   <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">Terminal output showing “Budget Variances > X%” + sample rows</p>
+  <p class="evidence__hint">Terminal output showing “Budget Variances &gt; X%” + sample rows</p>
 </div>
 
 <div class="evidence">
@@ -339,7 +339,7 @@ permalink: /logic_engine_concepts/
 
 <div class="evidence">
   <div class="evidence__label">ADD VIDEO</div>
-  <p class="evidence__hint">assets/demo/clip-b-rule-engine.mp4</p>
+  <p class="evidence__hint">assets/demo/clip-b-rule-engine.png</p>
 </div>
 
 <div class="evidence">

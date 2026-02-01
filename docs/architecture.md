@@ -78,7 +78,7 @@ permalink: /architecture/
     <div class="card__kicker">Order of operations</div>
     <div class="card__title">What happens during a run</div>
     <p class="card__desc">
-      1) Data Generator creates a “dirty” ERP dump (<code>invoices.xlsx</code> + <code>vendor_master.csv</code>)<br/>
+      1) Data Generator creates a “dirty” ERP dump (<code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/raw_erp_dump/invoices.xlsx</code> + <code>vendor_master.csv</code>)<br/>
       2) Rule Engine reads <code>config/audit_rules.yaml</code> and flags deterministic anomalies<br/>
       3) AI Auditor scans unstructured <code>Notes</code> for FOIP/PII signals (optional in CI)<br/>
       4) Evidence exports are written to <code>data/audit_reports/</code> (timestamped)<br/>
@@ -114,7 +114,7 @@ permalink: /architecture/
     <div class="card__kicker">Outputs</div>
     <div class="card__title">Raw inputs (source artifacts)</div>
     <p class="card__desc">
-      <code>data/raw_erp_dump/invoices.xlsx</code><br/>
+      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/raw_erp_dump/invoices.xlsx</code><br/>
       <code>data/raw_erp_dump/vendor_master.csv</code>
     </p>
     <div class="card__meta">
@@ -180,9 +180,9 @@ permalink: /architecture/
     <div class="card__kicker">Evidence exports</div>
     <div class="card__title">Timestamped exception tables</div>
     <p class="card__desc">
-      <code>data/audit_reports/ghost_vendors_&lt;TS&gt;.csv</code><br/>
-      <code>data/audit_reports/po_variance_&lt;TS&gt;.csv</code><br/>
-      <code>data/audit_reports/high_value_&lt;TS&gt;.csv</code> (if enabled/exported)
+      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/ghost_vendors_20260201_124647.csv</code><br/>
+      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/po_variance_20260201_124647.csv</code><br/>
+      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/high_value_20260201_125633.csv</code> (if enabled/exported)
     </p>
     <div class="card__meta">
       <span class="chip chip--info">Evidence artifacts</span>
@@ -228,7 +228,7 @@ permalink: /architecture/
   <div class="card card--half">
     <div class="card__kicker">Output</div>
     <div class="card__title">FOIP/PII findings evidence</div>
-    <p class="card__desc"><code>data/audit_reports/foip_ai_findings_&lt;TS&gt;.csv</code> (or your chosen naming)</p>
+    <p class="card__desc"><code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/foip_ai_findings_20260131_224156.csv</code> (or your chosen naming)</p>
     <div class="card__meta">
       <span class="chip">InvoiceID</span>
       <span class="chip">RiskContent</span>
@@ -385,11 +385,11 @@ permalink: /architecture/
 
 | Output Type | Where it lands | Why it matters |
 |---|---|---|
-| Raw inputs | `data/raw_erp_dump/` | Reproducible “source” exports |
-| Ghost vendors evidence | `data/audit_reports/ghost_vendors_<TS>.csv` | Vendor integrity exceptions |
-| PO variance evidence | `data/audit_reports/po_variance_<TS>.csv` | Overbilling / mismatch evidence |
-| High value evidence | `data/audit_reports/high_value_<TS>.csv` | Review prioritization (materiality) |
-| FOIP/PII findings | `data/audit_reports/foip_ai_findings_<TS>.csv` | Privacy risk triage for review |
+| Raw inputs | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/raw_erp_dump/invoices.xlsx` | Reproducible “source” exports |
+| Ghost vendors evidence | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/ghost_vendors_20260201_124647.csv` | Vendor integrity exceptions |
+| PO variance evidence | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/po_variance_20260201_124647.csv` | Overbilling / mismatch evidence |
+| High value evidence | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/high_value_20260201_125633.csv` | Review prioritization (materiality) |
+| FOIP/PII findings | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/foip_ai_findings_20260131_224156.csv` | Privacy risk triage for review |
 | Run logs | `data/audit_reports/run_logs/` | Traceability, debugging, audit trail |
 
   </div>

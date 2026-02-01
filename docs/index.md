@@ -1,7 +1,8 @@
 # Procurement Audit Automation
+
 **Automated Compliance & Audit Engine for ERP procurement exports**
 
-> **One-liner:** Turn messy ERP procurement dumps (Excel/CSV) into **audit-ready evidence**: ghost vendor detection, PO variance checks, high-value flags, and FOIP/PII risk scanning.
+> **:** Turn messy ERP procurement dumps (Excel/CSV) into **audit-ready evidence**: ghost vendor detection, PO variance checks, high-value flags, and FOIP/PII risk scanning.
 
 <div class="cards">
   <div class="card card--half">
@@ -127,7 +128,6 @@
   </div>
 </div>
 
-
 ---
 
 ## 🎥 Demo Flow (video + screenshot plan)
@@ -189,27 +189,27 @@
 
 <div class="evidence">
   <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip A</div>
-  <p class="evidence__hint">assets/demo/clip-a-generate.mp4 + screenshot of generated files list</p>
+  <p class="evidence__hint">assets/demo/clip-a-generate.png + assets/screenshots/a1-generated-files.png + assets/screenshots/a2-excel-anomalies.png</p>
 </div>
 
 <div class="evidence">
   <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip B</div>
-  <p class="evidence__hint">assets/demo/clip-b-rule-engine.mp4 + screenshot of terminal output + evidence folder exports</p>
+  <p class="evidence__hint">assets/demo/clip-b-rule-engine.png + assets/screenshots/b2-evidence-folder.png</p>
 </div>
 
 <div class="evidence">
   <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip C</div>
-  <p class="evidence__hint">assets/demo/clip-c-ai-scan.mp4 + screenshot of AI findings output + findings CSV</p>
+  <p class="evidence__hint">assets/demo/clip-c-ai-scan.png + assets/screenshots/c2-foip-evidence-csv.mp4</p>
 </div>
 
 <div class="evidence">
   <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip D</div>
-  <p class="evidence__hint">assets/demo/clip-d-dashboard.mp4 + screenshot of summary cards + export/download section</p>
+  <p class="evidence__hint">assets/demo/clip-d-dashboard.mp4 + assets/screenshots/d1-dashboard-home.mp4</p>
 </div>
 
 <div class="evidence">
   <div class="evidence__label">ADD SCREENSHOTS — Clip E</div>
-  <p class="evidence__hint">screenshot of local pytest passing + screenshot of GitHub Actions run (AI skipped with SKIP_AI=1)</p>
+  <p class="evidence__hint">assets/demo/clip-e-tests-ci.png + assets/screenshots/e2-github-actions-success.png</p>
 </div>
 
 ---
@@ -241,7 +241,7 @@
 
 <div class="evidence">
   <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">Screenshot: data/audit_reports/ folder after a full local run</p>
+  <p class="evidence__hint">assets/screenshots/b2-evidence-folder.png</p>
 </div>
 
 ---
@@ -251,37 +251,37 @@
 <div class="cards">
   <div class="card card--third">
     <div class="card__kicker">System</div>
-    <div class="card__title"><a href="architecture/">Architecture overview</a></div>
+    <div class="card__title"><a href="{{ '/architecture/' | relative_url }}">Architecture overview</a></div>
     <p class="card__desc">Pipeline flow, components, boundaries, and outputs.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Engine</div>
-    <div class="card__title"><a href="logic_engine_concepts/">Audit rule engine concepts</a></div>
+    <div class="card__title"><a href="{{ '/logic_engine_concepts/' | relative_url }}">Audit rule engine concepts</a></div>
     <p class="card__desc">How rules map to evidence tables and why the checks are audit-grade.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Data</div>
-    <div class="card__title"><a href="data_generator/">Data generator</a></div>
+    <div class="card__title"><a href="{{ '/data_generator/' | relative_url }}">Data generator</a></div>
     <p class="card__desc">Synthetic “dirty ERP” simulation for safe development and repeatable demos.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Privacy</div>
-    <div class="card__title"><a href="foip_pii_scanner/">FOIP/PII scanner</a></div>
+    <div class="card__title"><a href="{{ '/foip_pii_scanner/' | relative_url }}">FOIP/PII scanner</a></div>
     <p class="card__desc">NER-based risk detection and why it’s treated as an exception list.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Quality</div>
-    <div class="card__title"><a href="testing_ci/">Testing &amp; CI</a></div>
+    <div class="card__title"><a href="{{ '/testing_ci/' | relative_url }}">Testing &amp; CI</a></div>
     <p class="card__desc">Unit tests, CI pipeline behavior, and AI step handling.</p>
   </div>
 
   <div class="card card--third">
     <div class="card__kicker">Evidence</div>
-    <div class="card__title"><a href="demo/">Demo &amp; artifacts</a></div>
+    <div class="card__title"><a href="{{ '/demo/' | relative_url }}">Demo &amp; artifacts</a></div>
     <p class="card__desc">What to record and where to place screenshots/videos.</p>
   </div>
 </div>

@@ -1,14 +1,14 @@
 ---
+
 layout: default
 title: FOIP / PII Scanner
 permalink: /foip_pii_scanner/
----
+-----------------------------
 
 # 🔒 FOIP / PII Scanner (AI Auditor)
 
-> **Goal:** Catch privacy-risk text inside **Notes / Comments / Description** fields **before** exports get shared, emailed, archived, or turned into reports.  
+> **Goal:** Catch privacy-risk text inside **Notes / Comments / Description** fields **before** exports get shared, emailed, archived, or turned into reports.
 > This is a **fast pre-screen** that produces **evidence tables** for review (not a legal determination).
-
 
 <div class="cards">
   <div class="card card--half">
@@ -77,7 +77,7 @@ flowchart LR
   F --> G
   G --> H[foip_ai_findings_<timestamp>.csv]
   H --> I[Dashboard + Downloads]
-````
+```
 
 <div class="cards">
   <div class="card card--half">
@@ -268,22 +268,20 @@ flowchart LR
 
 <div class="evidence">
   <div class="evidence__label">ADD VIDEO</div>
-  <p class="evidence__hint">assets/demo/clip-c-ai-scan.mp4</p>
+  <p class="evidence__hint">assets/demo/clip-c-ai-scan.png</p>
 </div>
 
 <div class="evidence">
   <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">Terminal output showing findings count and flagged rows</p>
+  <p class="evidence__hint">assets/demo/clip-c-ai-scan.png</p>
 </div>
 
 <div class="evidence">
   <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">data/audit_reports/foip_ai_findings_&lt;timestamp&gt;.csv visible in folder</p>
+  <p class="evidence__hint">data/audit_reports/foip_ai_findings_20260131_224156.csv</p>
 </div>
 
 <div class="evidence">
   <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">Streamlit: FOIP/PII Findings tab + download/export section</p>
+  <p class="evidence__hint">assets/screenshots/d1-dashboard-home.mp4</p>
 </div>
-```
-::contentReference[oaicite:0]{index=0}

@@ -258,7 +258,7 @@ if "rule_results" in st.session_state:
 
     st.divider()
 
-    st.subheader("🧠 Rules Used")
+    st.subheader(" Rules Used")
     st.write(
         {
             "max_po_variance": rule_results["variance_limit"],
