@@ -4,7 +4,7 @@ title: System Architecture & Audit Pipeline
 permalink: /architecture/
 ---
 
-# 🏗️ System Architecture & Audit Pipeline (Project 2)
+# 🏗️ System Architecture & Audit Pipeline
 
 <div class="cards">
   <div class="card card--half">

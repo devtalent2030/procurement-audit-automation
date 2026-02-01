@@ -1,4 +1,4 @@
-# Procurement Audit Automation (Project 2)
+# Procurement Audit Automation
 **Automated Compliance & Audit Engine for ERP procurement exports**
 
 > **One-liner:** Turn messy ERP procurement dumps (Excel/CSV) into **audit-ready evidence**: ghost vendor detection, PO variance checks, high-value flags, and FOIP/PII risk scanning.
