@@ -119,7 +119,7 @@ flowchart LR
   </div>
 
   <div class="card card--half">
-    <div class="card__kicker">Genius Mode</div>
+    <div class="card__kicker">Mode</div>
     <div class="card__title">Tune to workflow risk appetite</div>
     <p class="card__desc">High-risk review may prefer more findings (lower threshold). High-volume operations may prefer less noise (higher threshold). Treat this as a versioned control like any other audit rule.</p>
     <div class="card__meta">

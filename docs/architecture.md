@@ -126,7 +126,7 @@ permalink: /architecture/
 </div>
 
 <details>
-<summary><strong>🧠 Genius Mode: why synthetic data is non-negotiable</strong></summary>
+<summary><strong>: why synthetic data is non-negotiable</strong></summary>
 
 <div class="cards">
   <div class="card">
@@ -193,7 +193,7 @@ permalink: /architecture/
 </div>
 
 <details>
-<summary><strong>🧠 Genius Mode: why YAML rules matter in real organizations</strong></summary>
+<summary><strong>: why YAML rules matter in real organizations</strong></summary>
 
 <div class="cards">
   <div class="card">
@@ -239,7 +239,7 @@ permalink: /architecture/
 </div>
 
 <details>
-<summary><strong>🧠 Genius Mode: trust model — AI is assistive, not authoritative</strong></summary>
+<summary><strong>: trust model — AI is assistive, not authoritative</strong></summary>
 
 <div class="cards">
   <div class="card">
@@ -317,7 +317,7 @@ permalink: /architecture/
 </div>
 
 <details>
-<summary><strong>🧠 Genius Mode: why the AI step is optional in CI</strong></summary>
+<summary><strong>: why the AI step is optional in CI</strong></summary>
 
 <div class="cards">
   <div class="card">

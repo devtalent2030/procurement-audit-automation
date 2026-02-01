@@ -51,7 +51,7 @@ permalink: /logic_engine_concepts/
   </div>
 
   <div class="card card--half">
-    <div class="card__kicker">Genius Mode</div>
+    <div class="card__kicker">Mode</div>
     <div class="card__title">Policy is versionable</div>
     <p class="card__desc">Treat the YAML file like a control document: version it, review it, and align it to department tolerance (finance vs procurement vs compliance).</p>
     <div class="card__meta">
@@ -105,7 +105,7 @@ permalink: /logic_engine_concepts/
   <p class="evidence__hint">Exported CSV in folder: data/audit_reports/ghost_vendors_&lt;timestamp&gt;.csv</p>
 </div>
 
-### 🧠 Genius Mode: edge cases (ghost vendors)
+### : edge cases (ghost vendors)
 
 <div class="cards">
   <div class="card card--half">
@@ -167,7 +167,7 @@ permalink: /logic_engine_concepts/
   <p class="evidence__hint">Exported CSV in folder: data/audit_reports/po_variance_&lt;timestamp&gt;.csv</p>
 </div>
 
-### 🧠 Genius Mode: edge cases (variance)
+### : edge cases (variance)
 
 <div class="cards">
   <div class="card card--half">
@@ -240,7 +240,7 @@ permalink: /logic_engine_concepts/
   </div>
 
   <div class="card card--half">
-    <div class="card__kicker">Genius Mode</div>
+    <div class="card__kicker">Mode</div>
     <div class="card__title">Traceability without heavy tooling</div>
     <p class="card__desc">For many audit workflows, consistent timestamped evidence exports provide enough traceability without needing a full data warehouse or ticketing integration.</p>
     <div class="card__meta">

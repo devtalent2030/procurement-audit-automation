@@ -91,7 +91,7 @@ def run_rule_engine(invoices: pd.DataFrame, master: pd.DataFrame, config: dict) 
 @st.cache_resource
 def get_cached_ner_pipeline():
     """
-    Genius Mode performance:
+    performance:
     Loading transformers is expensive.
     Cache it so it loads once per Streamlit session.
     """

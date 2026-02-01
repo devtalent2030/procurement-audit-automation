@@ -31,7 +31,7 @@
 
 ---
 
-## ✅ What this project delivers
+## What this project delivers
 
 <div class="cards">
   <div class="card card--third">
@@ -98,7 +98,11 @@
   <div class="card card--half">
     <div class="card__kicker">Code</div>
     <div class="card__title">Repository</div>
-    <p class="card__desc"><a href="../">Open Repository</a></p>
+    <p class="card__desc">
+      <a class="btn btn--accent" href="https://github.com/devtalent2030/procurement-audit-automation" target="_blank" rel="noopener">
+        Open Repository
+      </a>
+    </p>
     <div class="card__meta">
       <span class="chip">src/</span>
       <span class="chip">app/</span>
@@ -110,7 +114,11 @@
   <div class="card card--half">
     <div class="card__kicker">Primary reference</div>
     <div class="card__title">README</div>
-    <p class="card__desc"><a href="../blob/main/README.md">View README</a></p>
+    <p class="card__desc">
+      <a class="btn" href="https://github.com/devtalent2030/procurement-audit-automation#readme" target="_blank" rel="noopener">
+        View README
+      </a>
+    </p>
     <div class="card__meta">
       <span class="chip">Setup</span>
       <span class="chip">Commands</span>
@@ -118,6 +126,7 @@
     </div>
   </div>
 </div>
+
 
 ---
 
@@ -205,7 +214,7 @@
 
 ---
 
-## 📦 Evidence outputs
+## Evidence outputs
 
 <div class="cards">
   <div class="card card--half">
@@ -237,7 +246,7 @@
 
 ---
 
-## 📚 Documentation pages
+## Documentation pages
 
 <div class="cards">
   <div class="card card--third">
@@ -281,7 +290,7 @@
 
 <details>
 
-<summary><strong>🧠 Genius Mode: why this design is audit-grade</strong></summary>
+<summary><strong> why this design is audit-grade</strong></summary>
 
 <div class="cards">
   <div class="card card--half">
@@ -341,7 +350,7 @@
 
 ---
 
-## 🎯 Mapping to IT Reporting / Compliance work
+## Mapping to IT Reporting / Compliance work
 
 <div class="cards">
   <div class="card card--half">

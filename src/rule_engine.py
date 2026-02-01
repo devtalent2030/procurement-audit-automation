@@ -14,7 +14,7 @@ def load_config(config_path="config/audit_rules.yaml"):
 
 
 # -----------------------------
-# Genius Mode: Pure Audit Engine
+# : Pure Audit Engine
 # -----------------------------
 def audit_invoices(invoices: pd.DataFrame, master_list: pd.DataFrame, config: dict) -> dict:
     """
