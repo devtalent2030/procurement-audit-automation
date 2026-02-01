@@ -3,12 +3,12 @@ import pandas as pd
 import warnings
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL")
 
-from transformers import pipeline
 import os
 
 # 1. MODEL LOADER
 # We wrap this in a function so we don't load the massive brain unless we need it.
 def load_auditor_brain():
+    from transformers import pipeline
     """
     Initializes the Named Entity Recognition (NER) pipeline.
     Uses a standard BERT model fine-tuned for entity detection.
