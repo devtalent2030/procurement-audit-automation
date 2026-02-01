@@ -152,7 +152,38 @@ body {
 }
 
 /* Images */
-.main-content img {
+.img-container {
+  display: block;
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.02);
+}
+
+/* Videos */
+.video-container {
+  display: block;
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.video-container video {
+  max-width: 100%;
+  height: auto;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(15, 23, 42, 0.10);
@@ -340,3 +371,63 @@ tbody tr:hover td {
 ------------------------------------------ */
 .muted { color: var(--text-muted); }
 .faint { color: var(--text-faint); }
+
+/* -----------------------------------------
+   Hide Skip to Content
+------------------------------------------ */
+.skip-to-content,
+.u-skip-link,
+a[href="#main-content"] {
+  display: none !important;
+}
+
+/* -----------------------------------------
+   Fixed Navigation Bar
+------------------------------------------ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--card-bg);
+  z-index: 1000;
+  box-shadow: var(--shadow-soft);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.site-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li {
+  margin: 0;
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: background 0.2s ease;
+}
+
+.site-nav a:hover {
+  background: rgba(15, 23, 42, 0.06);
+}
+
+/* Adjust main content to account for fixed header */
+body {
+  padding-top: 60px; /* Adjust based on header height */
+}

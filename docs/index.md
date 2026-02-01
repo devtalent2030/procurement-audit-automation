@@ -1,3 +1,8 @@
+---
+layout: default
+title: Procurement Audit Automation
+---
+
 # Procurement Audit Automation
 
 **Automated Compliance & Audit Engine for ERP procurement exports**
@@ -188,28 +193,81 @@
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip A</div>
-  <p class="evidence__hint">assets/demo/clip-a-generate.png + assets/screenshots/a1-generated-files.png + assets/screenshots/a2-excel-anomalies.png</p>
+  <div class="evidence__label">Clip A: Generate dirty ERP data</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/demo/clip-a-generate.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/demo/clip-a-generate.png" alt="Clip A - Data Generation Overview">
+    </a>
+  </div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/screenshots/a1-generated-files.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/screenshots/a1-generated-files.png" alt="Generated Files">
+    </a>
+  </div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/screenshots/a2-excel-anomalies.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/screenshots/a2-excel-anomalies.png" alt="Excel Anomalies">
+    </a>
+  </div>
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip B</div>
-  <p class="evidence__hint">assets/demo/clip-b-rule-engine.png + assets/screenshots/b2-evidence-folder.png</p>
+  <div class="evidence__label">Clip B: Rule engine catches anomalies</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/demo/clip-b-rule-engine.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/demo/clip-b-rule-engine.png" alt="Clip B - Rule Engine Overview">
+    </a>
+  </div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" alt="Evidence Folder">
+    </a>
+  </div>
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip C</div>
-  <p class="evidence__hint">assets/demo/clip-c-ai-scan.png + assets/screenshots/c2-foip-evidence-csv.mp4</p>
+  <div class="evidence__label">Clip C: FOIP/PII scan on Notes</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/demo/clip-c-ai-scan.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/demo/clip-c-ai-scan.png" alt="Clip C - AI Scan Overview">
+    </a>
+  </div>
+  <div class="video-container">
+    <video controls loop muted>
+      <source src="{{ site.baseurl }}/assets/screenshots/c2-foip-evidence-csv.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD VIDEO / SCREENSHOTS — Clip D</div>
-  <p class="evidence__hint">assets/demo/clip-d-dashboard.mp4 + assets/screenshots/d1-dashboard-home.mp4</p>
+  <div class="evidence__label">Clip D: Streamlit dashboard + exports</div>
+  <div class="video-container">
+    <video controls loop muted>
+      <source src="{{ site.baseurl }}/assets/demo/clip-d-dashboard.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="video-container">
+    <video controls loop muted>
+      <source src="{{ site.baseurl }}/assets/screenshots/d1-dashboard-home.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD SCREENSHOTS — Clip E</div>
-  <p class="evidence__hint">assets/demo/clip-e-tests-ci.png + assets/screenshots/e2-github-actions-success.png</p>
+  <div class="evidence__label">Clip E: Testing + CI evidence</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/demo/clip-e-tests-ci.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/demo/clip-e-tests-ci.png" alt="Clip E - Tests & CI Overview">
+    </a>
+  </div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/screenshots/e2-github-actions-success.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/screenshots/e2-github-actions-success.png" alt="GitHub Actions Success">
+    </a>
+  </div>
 </div>
 
 ---
@@ -240,8 +298,12 @@
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">assets/screenshots/b2-evidence-folder.png</p>
+  <div class="evidence__label">Evidence Folder Screenshot</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" alt="Evidence Folder Structure">
+    </a>
+  </div>
 </div>
 
 ---

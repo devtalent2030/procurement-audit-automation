@@ -66,11 +66,13 @@ permalink: /architecture/
   </div>
 </div>
 
-![Pipeline Flow Diagram](assets/architecture_flow.png)
-
 <div class="evidence">
-  <div class="evidence__label">ADD DIAGRAM IMAGE</div>
-  <p class="evidence__hint">Replace assets/architecture_flow.png with your exported diagram (keep filename stable for the page)</p>
+  <div class="evidence__label">Pipeline Flow Diagram</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/architecture_flow.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/architecture_flow.png" alt="Pipeline Flow Diagram">
+    </a>
+  </div>
 </div>
 
 <div class="cards">
@@ -284,8 +286,19 @@ permalink: /architecture/
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD SCREENSHOT / VIDEO</div>
-  <p class="evidence__hint">Dashboard landing page + summary cards + export buttons (place assets in docs/assets/… and reference them here)</p>
+  <div class="evidence__label">Dashboard Demo</div>
+  <div class="video-container">
+    <video controls loop muted>
+      <source src="{{ site.baseurl }}/assets/demo/clip-d-dashboard.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="video-container">
+    <video controls loop muted>
+      <source src="{{ site.baseurl }}/assets/screenshots/d1-dashboard-home.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
 
 ---
@@ -385,21 +398,24 @@ permalink: /architecture/
 
 | Output Type | Where it lands | Why it matters |
 |---|---|---|
-| Raw inputs | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/raw_erp_dump/invoices.xlsx` | Reproducible “source” exports |
-| Ghost vendors evidence | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/ghost_vendors_20260201_124647.csv` | Vendor integrity exceptions |
-| PO variance evidence | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/po_variance_20260201_124647.csv` | Overbilling / mismatch evidence |
-| High value evidence | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/high_value_20260201_125633.csv` | Review prioritization (materiality) |
-| FOIP/PII findings | `/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/foip_ai_findings_20260131_224156.csv` | Privacy risk triage for review |
-| Run logs | `data/audit_reports/run_logs/` | Traceability, debugging, audit trail |
+| Raw inputs | [data/raw_erp_dump/invoices.xlsx](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/raw_erp_dump/invoices.xlsx)<br>[data/raw_erp_dump/vendor_master.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/raw_erp_dump/vendor_master.csv) | Reproducible “source” exports |
+| Ghost vendors evidence | [data/audit_reports/ghost_vendors_20260201_124647.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/ghost_vendors_20260201_124647.csv) | Vendor integrity exceptions |
+| PO variance evidence | [data/audit_reports/po_variance_20260201_124647.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/po_variance_20260201_124647.csv) | Overbilling / mismatch evidence |
+| High value evidence | [data/audit_reports/high_value_20260201_125633.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/high_value_20260201_125633.csv) | Review prioritization (materiality) |
+| FOIP/PII findings | [data/audit_reports/foip_ai_findings_20260131_224156.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/foip_ai_findings_20260131_224156.csv) | Privacy risk triage for review |
+| Run logs | [data/audit_reports/run_logs/](https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/audit_reports/run_logs) | Traceability, debugging, audit trail |
 
   </div>
 </div>
 
 <div class="evidence">
-  <div class="evidence__label">ADD SCREENSHOT</div>
-  <p class="evidence__hint">data/audit_reports/ and data/audit_reports/run_logs/ after a successful run</p>
+  <div class="evidence__label">Audit Reports Folder</div>
+  <div class="img-container">
+    <a href="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" target="_blank">
+      <img src="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" alt="Audit Reports and Run Logs">
+    </a>
+  </div>
 </div>
-
 ---
 
 ## 6) Scalability roadmap (production-grade direction)

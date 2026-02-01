@@ -1,35 +1,43 @@
 theme: jekyll-theme-cayman
 
-
 title: Procurement Audit Automation
 description: Config-driven ERP audit engine with FOIP/PII risk scanning (NLP) and audit-ready reporting outputs.
-
 
 # Small UX upgrades
 show_downloads: false
 
-
 # Helps GitHub Pages generate correct canonical links + metadata
 url: https://devtalent2030.github.io
 baseurl: /procurement-audit-automation
-
 
 # Optional: adds nicer metadata cards when someone shares your site link
 plugins:
 - jekyll-seo-tag
 - jekyll-sitemap
 
-
 # Markdown engine (default is fine, but being explicit avoids surprises)
 markdown: kramdown
+
+# Enable pretty URLs (removes .html from page links)
+permalink: pretty
 
 sass:
   sass_dir: assets/css
   style: compressed
 
-# Optional: if you later want nav links in a header (we can add this after content)
-# nav:
-# - label: Home
-# link: /
-# - label: Demo
-# link: /demo
+# Navigation bar links
+nav:
+- label: Home
+  link: /
+- label: Architecture
+  link: /architecture
+- label: Engine
+  link: /logic_engine_concepts
+- label: Data
+  link: /data_generator
+- label: Privacy
+  link: /foip_pii_scanner
+- label: Quality
+  link: /testing_ci
+- label: Evidence
+  link: /demo
