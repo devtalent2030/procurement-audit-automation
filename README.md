@@ -2,7 +2,7 @@
 
 **Config-driven audit engine for ERP procurement exports (Excel/CSV)** with **FOIP/PII risk scanning** and **audit-ready evidence outputs**.
 
-> **One-liner:** Turn messy procurement dumps into **traceable exception reports**: ghost vendor detection, PO variance checks, high‑value flags, and FOIP/PII scanning in free‑text “Notes”.
+> **:** Turn messy procurement dumps into **traceable exception reports**: ghost vendor detection, PO variance checks, high‑value flags, and FOIP/PII scanning in free‑text “Notes”.
 
 ---
 
