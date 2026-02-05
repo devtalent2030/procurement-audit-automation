@@ -1,0 +1,4 @@
+InvoiceID,RiskContent,DetectedFlags
+INV-2006-ND,Please forward the private contract to brockjohn@yahoo.com,POSSIBLE_EMAIL
+INV-2293-Ci,CONFIDENTIAL: Discuss with Cristina Watkins before processing.,NAME_DETECTED: Cristina Watkins
+INV-2428-iJ,Please forward the private contract to andreasimon@gmail.com,POSSIBLE_EMAIL

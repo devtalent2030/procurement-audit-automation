@@ -1,6 +1,4 @@
 __pycache__/
-*.xlsx
-*.csv
 .env
 /venv
 data/.DS_Store

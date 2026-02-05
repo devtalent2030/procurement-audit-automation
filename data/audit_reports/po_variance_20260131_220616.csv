@@ -1,0 +1,4 @@
+InvoiceID,VendorID,VendorName,InvoiceDate,InvoiceAmount,PO_Amount,Department,Notes,Variance
+INV-7212-tv,VENDOR-012,Rojas PLC,2026-01-30,35525.18,28420.14,IT - Tech & Innovation,Net 30 Terms,0.2500001759315753
+INV-5703-rR,VENDOR-014,Dunn Ltd,2026-01-30,9861.26,7889.01,IT - Tech & Innovation,Annual maintenance,0.24999968310345658
+INV-5621-JY,VENDOR-020,"Brown, Rhodes and Nelson",2026-01-30,46182.74,36946.19,IT - Tech & Innovation,Software subscription,0.2500000676659757
