@@ -419,7 +419,7 @@ permalink: /architecture/
           <tr>
             <td>Raw inputs</td>
             <td>
-              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/raw_erp_dump" target="_blank" rel="noopener">
+              <a href="https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/raw_erp_dump" target="_blank" rel="noopener">
                 <code>data/raw_erp_dump/</code>
               </a>
             </td>
@@ -428,7 +428,7 @@ permalink: /architecture/
           <tr>
             <td>Ghost vendors evidence</td>
             <td>
-              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+              <a href="https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/audit_reports" target="_blank" rel="noopener">
                 <code>data/audit_reports/</code>
               </a>
             </td>
@@ -437,7 +437,7 @@ permalink: /architecture/
           <tr>
             <td>PO variance evidence</td>
             <td>
-              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+              <a href="https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/audit_reports" target="_blank" rel="noopener">
                 <code>data/audit_reports/</code>
               </a>
             </td>
@@ -446,7 +446,7 @@ permalink: /architecture/
           <tr>
             <td>High value evidence</td>
             <td>
-              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+              <a href="https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/audit_reports" target="_blank" rel="noopener">
                 <code>data/audit_reports/</code>
               </a>
             </td>
@@ -455,7 +455,7 @@ permalink: /architecture/
           <tr>
             <td>FOIP/PII findings</td>
             <td>
-              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+              <a href="https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/audit_reports" target="_blank" rel="noopener">
                 <code>data/audit_reports/</code>
               </a>
             </td>
@@ -464,7 +464,7 @@ permalink: /architecture/
           <tr>
             <td>Run logs</td>
             <td>
-              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports/run_logs" target="_blank" rel="noopener">
+              <a href="https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/audit_reports/run_logs" target="_blank" rel="noopener">
                 <code>data/audit_reports/run_logs/</code>
               </a>
             </td>
@@ -476,6 +476,7 @@ permalink: /architecture/
 
   </div>
 </div>
+
 
 <div class="evidence">
   <div class="evidence__label">Audit Reports Folder</div>
