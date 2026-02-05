@@ -406,14 +406,73 @@ permalink: /architecture/
     <div class="card__kicker">Artifacts</div>
     <div class="card__title">Where outputs land, and why they matter</div>
 
-| Output Type            | Where it lands                                                                           | Why it matters                       |
-| ---------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------ |
-| Raw inputs             | [data/raw_erp_dump/]({{ REPO }}/tree/{{ BRANCH }}/data/raw_erp_dump)                     | Reproducible “source” exports        |
-| Ghost vendors evidence | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Vendor integrity exceptions          |
-| PO variance evidence   | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Overbilling / mismatch evidence      |
-| High value evidence    | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Review prioritization (materiality)  |
-| FOIP/PII findings      | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Privacy risk triage for review       |
-| Run logs               | [data/audit_reports/run_logs/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports/run_logs) | Traceability, debugging, audit trail |
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Output Type</th>
+            <th>Where it lands</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Raw inputs</td>
+            <td>
+              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/raw_erp_dump" target="_blank" rel="noopener">
+                <code>data/raw_erp_dump/</code>
+              </a>
+            </td>
+            <td>Reproducible “source” exports</td>
+          </tr>
+          <tr>
+            <td>Ghost vendors evidence</td>
+            <td>
+              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+                <code>data/audit_reports/</code>
+              </a>
+            </td>
+            <td>Vendor integrity exceptions</td>
+          </tr>
+          <tr>
+            <td>PO variance evidence</td>
+            <td>
+              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+                <code>data/audit_reports/</code>
+              </a>
+            </td>
+            <td>Overbilling / mismatch evidence</td>
+          </tr>
+          <tr>
+            <td>High value evidence</td>
+            <td>
+              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+                <code>data/audit_reports/</code>
+              </a>
+            </td>
+            <td>Review prioritization (materiality)</td>
+          </tr>
+          <tr>
+            <td>FOIP/PII findings</td>
+            <td>
+              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener">
+                <code>data/audit_reports/</code>
+              </a>
+            </td>
+            <td>Privacy risk triage for review</td>
+          </tr>
+          <tr>
+            <td>Run logs</td>
+            <td>
+              <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports/run_logs" target="_blank" rel="noopener">
+                <code>data/audit_reports/run_logs/</code>
+              </a>
+            </td>
+            <td>Traceability, debugging, audit trail</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
   </div>
 </div>
