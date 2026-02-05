@@ -384,117 +384,116 @@ a[href="#main-content"] {
 /* -----------------------------------------
    Fixed Navigation Bar
 ------------------------------------------ */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--card-bg);
-  z-index: 1000;
-  box-shadow: var(--shadow-soft);
-  border-bottom: 1px solid var(--card-border);
-}
-
 .site-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav li {
-  margin: 0;
-}
-
-.site-nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
-  transition: background 0.2s ease;
-}
-
-.site-nav a:hover {
-  background: rgba(15, 23, 42, 0.06);
-}
-
-/* Adjust main content to account for fixed header */
-/* --- FIXED NAVIGATION BAR STYLES --- */
-
-/* 1. Push the whole page down so the bar doesn't cover the title */
-body {
-  padding-top: 80px;
-  margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-}
-
-/* 2. The Fixed Bar itself */
-.site-nav {
-  position: fixed;   /* Sticks to the window */
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #24292e; /* GitHub Dark Grey */
-  color: white;
-  z-index: 1000;     /* Ensures it sits ON TOP of images */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.85);
 }
 
 .nav-container {
-  max-width: 1000px; /* Matches standard readable width */
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-  padding: 0 20px;
+  gap: 14px;
 }
 
-/* Logo */
 .nav-logo {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: white;
+  font-weight: 800;
+  letter-spacing: 0.2px;
   text-decoration: none;
+  color: #111;
+  font-size: 18px;
+  white-space: nowrap;
 }
 
-/* Links */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  margin: 0; 
-}
-
 .nav-links a {
-  color: #d1d5da;
   text-decoration: none;
-  font-size: 0.9rem;
+  color: #111;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
 }
 
 .nav-links a:hover {
-  color: white;
-  text-decoration: underline;
+  background: rgba(0,0,0,0.06);
+  transform: translateY(-1px);
 }
 
-/* Mobile responsive tweak (optional) */
-@media (max-width: 768px) {
+.nav-links a.active {
+  background: rgba(0,0,0,0.10);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+/* Mobile toggle button */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #111;
+  margin: 4px 0;
+  border-radius: 999px;
+}
+
+/* Responsive: collapse into hamburger menu */
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .nav-links {
-    display: none; /* Hides links on very small screens to prevent breaking */
+    display: none;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 62px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.14);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 12px;
+  }
+
+  .nav-container {
+    position: relative;
   }
 }
