@@ -135,7 +135,7 @@ title: Procurement Audit Automation
 
 ---
 
-## 🎥 Demo Flow (video + screenshot plan)
+##  Demo Flow (video + screenshot plan)
 
 <div class="cards">
   <div class="card card--half">

@@ -35,7 +35,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## 🧩 Config-driven rules (YAML = change control)
+##  Config-driven rules (YAML = change control)
 
 <div class="cards">
   <div class="card card--half">
@@ -68,7 +68,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## 1) 👻 Ghost vendor detection (anti-join pattern)
+## 1 Ghost vendor detection (anti-join pattern)
 
 <div class="cards">
   <div class="card card--half">
@@ -130,7 +130,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## 2) 📉 PO variance detection (variance math)
+## 2 PO variance detection (variance math)
 
 <div class="cards">
   <div class="card card--half">
@@ -192,7 +192,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## 3) 💰 High-value invoice flagging (risk prioritization)
+## 3 High-value invoice flagging (risk prioritization)
 
 <div class="cards">
   <div class="card card--half">
@@ -224,7 +224,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## 📦 Evidence exports (why CSV is the right artifact)
+##  Evidence exports (why CSV is the right artifact)
 
 <div class="cards">
   <div class="card card--half">
@@ -284,7 +284,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## 🔒 Trust boundary: deterministic rules vs AI signals
+##  Trust boundary: deterministic rules vs AI signals
 
 <div class="cards">
   <div class="card card--half">
@@ -310,7 +310,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## 🎥 Evidence placeholders (add screenshots / video)
+##  Evidence placeholders (add screenshots / video)
 
 <div class="cards">
   <div class="card card--half">
@@ -358,7 +358,7 @@ permalink: /logic_engine_concepts/
 
 ---
 
-## ✅ Summary
+##  Summary
 
 <div class="cards">
   <div class="card">

@@ -126,7 +126,7 @@ variance = abs(invoice_amount - po_amount) / po_amount
 
 ---
 
-### 3) High-Value Invoices (threshold-based monitoring)
+### 3 High-Value Invoices (threshold-based monitoring)
 
 A portion of invoices are generated above a configurable high-value threshold.
 
@@ -153,7 +153,7 @@ A portion of invoices are generated above a configurable high-value threshold.
 
 ---
 
-### 4) FOIP/PII risks embedded in Notes (unstructured text)
+### 4 FOIP/PII risks embedded in Notes (unstructured text)
 
 The `Notes` field is where “human messiness” lives:
 

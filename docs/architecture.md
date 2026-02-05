@@ -1,10 +1,14 @@
 ---
+
 layout: default
 title: System Architecture & Audit Pipeline
 permalink: /architecture/
 ---
 
-# 🏗️ System Architecture & Audit Pipeline
+{% assign REPO = "[https://github.com/devtalent2030/procurement-audit-automation](https://github.com/devtalent2030/procurement-audit-automation)" %}
+{% assign BRANCH = "main" %}
+
+# System Architecture & Audit Pipeline
 
 <div class="cards">
   <div class="card card--half">
@@ -32,7 +36,7 @@ permalink: /architecture/
 
 ---
 
-## 1) System story
+## 1 System story
 
 <div class="cards">
   <div class="card">
@@ -49,7 +53,7 @@ permalink: /architecture/
 
 ---
 
-## 2) End-to-end flow
+## 2 End-to-end flow
 
 <div class="cards">
   <div class="card">
@@ -69,7 +73,7 @@ permalink: /architecture/
 <div class="evidence">
   <div class="evidence__label">Pipeline Flow Diagram</div>
   <div class="img-container">
-    <a href="{{ site.baseurl }}/assets/architecture_flow.png" target="_blank">
+    <a href="{{ site.baseurl }}/assets/architecture_flow.png" target="_blank" rel="noopener">
       <img src="{{ site.baseurl }}/assets/architecture_flow.png" alt="Pipeline Flow Diagram">
     </a>
   </div>
@@ -80,10 +84,18 @@ permalink: /architecture/
     <div class="card__kicker">Order of operations</div>
     <div class="card__title">What happens during a run</div>
     <p class="card__desc">
-      1) Data Generator creates a “dirty” ERP dump (<code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/raw_erp_dump/invoices.xlsx</code> + <code>vendor_master.csv</code>)<br/>
-      2) Rule Engine reads <code>config/audit_rules.yaml</code> and flags deterministic anomalies<br/>
+      1) Data Generator creates a “dirty” ERP dump (
+      <a href="{{ REPO }}/blob/{{ BRANCH }}/data/raw_erp_dump/invoices.xlsx" target="_blank" rel="noopener"><code>data/raw_erp_dump/invoices.xlsx</code></a>
+      +
+      <a href="{{ REPO }}/blob/{{ BRANCH }}/data/raw_erp_dump/vendor_master.csv" target="_blank" rel="noopener"><code>data/raw_erp_dump/vendor_master.csv</code></a>
+      )<br/>
+      2) Rule Engine reads
+      <a href="{{ REPO }}/blob/{{ BRANCH }}/config/audit_rules.yaml" target="_blank" rel="noopener"><code>config/audit_rules.yaml</code></a>
+      and flags deterministic anomalies<br/>
       3) AI Auditor scans unstructured <code>Notes</code> for FOIP/PII signals (optional in CI)<br/>
-      4) Evidence exports are written to <code>data/audit_reports/</code> (timestamped)<br/>
+      4) Evidence exports are written to
+      <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener"><code>data/audit_reports/</code></a>
+      (timestamped)<br/>
       5) Streamlit Dashboard runs the audit and provides export buttons<br/>
       6) CI runs the same flow but may skip AI for stability (<code>SKIP_AI=1</code>)
     </p>
@@ -97,14 +109,14 @@ permalink: /architecture/
 
 ---
 
-## 3) Components (what each part does)
+## 3 Components (what each part does)
 
 <div class="cards">
 
   <div class="card card--half">
     <div class="card__kicker">Input layer</div>
     <div class="card__title">ERP export simulation</div>
-    <p class="card__desc"><strong>Component:</strong> <code>src/data_generator.py</code><br/>Produces a safe, realistic dataset without using real ERP data.</p>
+    <p class="card__desc"><strong>Component:</strong> <a href="{{ REPO }}/blob/{{ BRANCH }}/src/data_generator.py" target="_blank" rel="noopener"><code>src/data_generator.py</code></a><br/>Produces a safe, realistic dataset without using real ERP data.</p>
     <div class="card__meta">
       <span class="chip">Synthetic data</span>
       <span class="chip">Reproducible</span>
@@ -116,8 +128,8 @@ permalink: /architecture/
     <div class="card__kicker">Outputs</div>
     <div class="card__title">Raw inputs (source artifacts)</div>
     <p class="card__desc">
-      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/raw_erp_dump/invoices.xlsx</code><br/>
-      <code>data/raw_erp_dump/vendor_master.csv</code>
+      <a href="{{ REPO }}/blob/{{ BRANCH }}/data/raw_erp_dump/invoices.xlsx" target="_blank" rel="noopener"><code>data/raw_erp_dump/invoices.xlsx</code></a><br/>
+      <a href="{{ REPO }}/blob/{{ BRANCH }}/data/raw_erp_dump/vendor_master.csv" target="_blank" rel="noopener"><code>data/raw_erp_dump/vendor_master.csv</code></a>
     </p>
     <div class="card__meta">
       <span class="chip">ERP-like</span>
@@ -152,7 +164,7 @@ permalink: /architecture/
   <div class="card card--half">
     <div class="card__kicker">Rules layer</div>
     <div class="card__title">Config-driven audit engine</div>
-    <p class="card__desc"><strong>Component:</strong> <code>src/rule_engine.py</code><br/>Deterministic, explainable checks using pandas. Thresholds live in YAML for change control.</p>
+    <p class="card__desc"><strong>Component:</strong> <a href="{{ REPO }}/blob/{{ BRANCH }}/src/rule_engine.py" target="_blank" rel="noopener"><code>src/rule_engine.py</code></a><br/>Deterministic, explainable checks using pandas. Thresholds live in YAML for change control.</p>
     <div class="card__meta">
       <span class="chip chip--ok">Deterministic</span>
       <span class="chip">Explainable</span>
@@ -182,9 +194,9 @@ permalink: /architecture/
     <div class="card__kicker">Evidence exports</div>
     <div class="card__title">Timestamped exception tables</div>
     <p class="card__desc">
-      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/ghost_vendors_20260201_124647.csv</code><br/>
-      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/po_variance_20260201_124647.csv</code><br/>
-      <code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/high_value_20260201_125633.csv</code> (if enabled/exported)
+      Evidence files are written to:
+      <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener"><code>data/audit_reports/</code></a><br/>
+      (example outputs include <code>ghost_vendors_YYYYMMDD_HHMMSS.csv</code>, <code>po_variance_YYYYMMDD_HHMMSS.csv</code>, etc.)
     </p>
     <div class="card__meta">
       <span class="chip chip--info">Evidence artifacts</span>
@@ -219,7 +231,7 @@ permalink: /architecture/
   <div class="card card--half">
     <div class="card__kicker">AI layer</div>
     <div class="card__title">FOIP/PII scanner on Notes</div>
-    <p class="card__desc"><strong>Component:</strong> <code>src/ai_auditor.py</code><br/>Flags privacy risk signals in unstructured text. Outputs evidence rows for human review.</p>
+    <p class="card__desc"><strong>Component:</strong> <a href="{{ REPO }}/blob/{{ BRANCH }}/src/ai_auditor.py" target="_blank" rel="noopener"><code>src/ai_auditor.py</code></a><br/>Flags privacy risk signals in unstructured text. Outputs evidence rows for human review.</p>
     <div class="card__meta">
       <span class="chip chip--warn">Probabilistic</span>
       <span class="chip">Assistive</span>
@@ -230,7 +242,11 @@ permalink: /architecture/
   <div class="card card--half">
     <div class="card__kicker">Output</div>
     <div class="card__title">FOIP/PII findings evidence</div>
-    <p class="card__desc"><code>/Users/kuzie/Documents/GitHub/procurement-audit-automation/data/audit_reports/foip_ai_findings_20260131_224156.csv</code> (or your chosen naming)</p>
+    <p class="card__desc">
+      Findings evidence is written to:
+      <a href="{{ REPO }}/tree/{{ BRANCH }}/data/audit_reports" target="_blank" rel="noopener"><code>data/audit_reports/</code></a><br/>
+      (example: <code>foip_ai_findings_YYYYMMDD_HHMMSS.csv</code>)
+    </p>
     <div class="card__meta">
       <span class="chip">InvoiceID</span>
       <span class="chip">RiskContent</span>
@@ -265,7 +281,7 @@ permalink: /architecture/
   <div class="card card--half">
     <div class="card__kicker">Presentation layer</div>
     <div class="card__title">Streamlit dashboard</div>
-    <p class="card__desc"><strong>Component:</strong> <code>app/dashboard.py</code><br/>One-screen UI: run audit, show pass/fail summary, inspect results, export evidence tables.</p>
+    <p class="card__desc"><strong>Component:</strong> <a href="{{ REPO }}/blob/{{ BRANCH }}/app/dashboard.py" target="_blank" rel="noopener"><code>app/dashboard.py</code></a><br/>One-screen UI: run audit, show pass/fail summary, inspect results, export evidence tables.</p>
     <div class="card__meta">
       <span class="chip">Summary cards</span>
       <span class="chip">Tabs</span>
@@ -293,12 +309,6 @@ permalink: /architecture/
       Your browser does not support the video tag.
     </video>
   </div>
-  <div class="video-container">
-    <video controls loop muted>
-      <source src="{{ site.baseurl }}/assets/screenshots/d1-dashboard-home.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
 </div>
 
 ---
@@ -308,7 +318,7 @@ permalink: /architecture/
   <div class="card card--half">
     <div class="card__kicker">Orchestration</div>
     <div class="card__title">One command run</div>
-    <p class="card__desc"><strong>Component:</strong> <code>run_audit.sh</code><br/>Single entry point that generates inputs, runs checks, exports evidence, runs tests, and writes logs.</p>
+    <p class="card__desc"><strong>Component:</strong> <a href="{{ REPO }}/blob/{{ BRANCH }}/run_audit.sh" target="_blank" rel="noopener"><code>run_audit.sh</code></a><br/>Single entry point that generates inputs, runs checks, exports evidence, runs tests, and writes logs.</p>
     <div class="card__meta">
       <span class="chip">Reproducible</span>
       <span class="chip">Logged</span>
@@ -349,7 +359,7 @@ permalink: /architecture/
 
 ---
 
-## 4) Trust boundaries & data handling
+## 4 Trust boundaries & data handling
 
 <div class="cards">
 
@@ -389,21 +399,21 @@ permalink: /architecture/
 
 ---
 
-## 5) Outputs (audit evidence map)
+## 5 Outputs (audit evidence map)
 
 <div class="cards">
   <div class="card">
     <div class="card__kicker">Artifacts</div>
     <div class="card__title">Where outputs land, and why they matter</div>
 
-| Output Type | Where it lands | Why it matters |
-|---|---|---|
-| Raw inputs | [data/raw_erp_dump/invoices.xlsx](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/raw_erp_dump/invoices.xlsx)<br>[data/raw_erp_dump/vendor_master.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/raw_erp_dump/vendor_master.csv) | Reproducible “source” exports |
-| Ghost vendors evidence | [data/audit_reports/ghost_vendors_20260201_124647.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/ghost_vendors_20260201_124647.csv) | Vendor integrity exceptions |
-| PO variance evidence | [data/audit_reports/po_variance_20260201_124647.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/po_variance_20260201_124647.csv) | Overbilling / mismatch evidence |
-| High value evidence | [data/audit_reports/high_value_20260201_125633.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/high_value_20260201_125633.csv) | Review prioritization (materiality) |
-| FOIP/PII findings | [data/audit_reports/foip_ai_findings_20260131_224156.csv](https://github.com/devtalent2030/procurement-audit-automation/blob/main/data/audit_reports/foip_ai_findings_20260131_224156.csv) | Privacy risk triage for review |
-| Run logs | [data/audit_reports/run_logs/](https://github.com/devtalent2030/procurement-audit-automation/tree/main/data/audit_reports/run_logs) | Traceability, debugging, audit trail |
+| Output Type            | Where it lands                                                                           | Why it matters                       |
+| ---------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------ |
+| Raw inputs             | [data/raw_erp_dump/]({{ REPO }}/tree/{{ BRANCH }}/data/raw_erp_dump)                     | Reproducible “source” exports        |
+| Ghost vendors evidence | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Vendor integrity exceptions          |
+| PO variance evidence   | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Overbilling / mismatch evidence      |
+| High value evidence    | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Review prioritization (materiality)  |
+| FOIP/PII findings      | [data/audit_reports/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports)                   | Privacy risk triage for review       |
+| Run logs               | [data/audit_reports/run_logs/]({{ REPO }}/tree/{{ BRANCH }}/data/audit_reports/run_logs) | Traceability, debugging, audit trail |
 
   </div>
 </div>
@@ -411,14 +421,15 @@ permalink: /architecture/
 <div class="evidence">
   <div class="evidence__label">Audit Reports Folder</div>
   <div class="img-container">
-    <a href="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" target="_blank">
+    <a href="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" target="_blank" rel="noopener">
       <img src="{{ site.baseurl }}/assets/screenshots/b2-evidence-folder.png" alt="Audit Reports and Run Logs">
     </a>
   </div>
 </div>
+
 ---
 
-## 6) Scalability roadmap (production-grade direction)
+## 6 Scalability roadmap (production-grade direction)
 
 <div class="cards">
 
